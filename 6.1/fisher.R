@@ -1,0 +1,57 @@
+
+
+
+fisher.exact <- function(treatment, control, sharp.null, num.experiments) {
+    results <- vector("double")
+    len.treatment = length(treatment)
+    len.control = length(control)
+      
+    for(exp in 1:num.experiments) {
+        num.t.from.t = sample(0:len.treatment, 1)
+        t.from.t.indices = sample(1:len.treatment, num.t.from.t)
+        t.from.c.indices = sample(1:len.control, len.treatment - num.t.from.t)
+        
+        t.from.t = treatment[t.from.t.indices]
+        t.from.c = control[t.from.c.indices]
+        exp.treatment = c(t.from.t, t.from.c + sharp.null)
+        
+        if (length(t.from.t.indices) != 0) {
+            c.from.t = treatment[-t.from.t.indices]    
+        } else {
+            c.from.t = treatment
+        }
+        if (length(t.from.c.indices) != 0) {
+            c.from.c = control[-t.from.c.indices]    
+        } else {
+            c.from.c = control
+        }
+        
+        exp.control = c(c.from.c, c.from.t - sharp.null)    
+        
+        test.statistic = mean(exp.treatment) - mean(exp.control)
+        # cat(exp, num.t.from.t, exp.treatment, exp.control, test.statistic)
+        # print("")
+        results = c(results, test.statistic) 
+    }
+    
+    observed.test.statistic = mean(treatment) - mean(control)
+    return(1 - sum(observed.test.statistic > results) / num.experiments)
+}
+
+children.treatment = c(70.0, 66.0, 78.9)
+children.control = c(55.0, 72.0, 72.7)
+fisher.exact(children.treatment, children.control, 0, 1000)
+
+library("Matching")
+library("rgenoud")
+library("rbounds")
+
+D<-GerberGreenImai$PHN.C1 #treatment phone calls
+Y<-GerberGreenImai$VOTED98 #outcome, turnout
+X  <- fitted(pscore.glm)
+
+gen.weights <- GenMatch(Tr=D, X=X)
+summary(gen.weights)
+gen.match <- Match(Y=Y, Tr=D, X=X, Weight.matrix=gen.weights)
+summary(gen.match)
+psens(gen.match, Gamma=2, GammaInc=.05)
