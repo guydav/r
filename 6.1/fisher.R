@@ -1,3 +1,4 @@
+
 fisher.exact <- function(treatment, control, sharp.null, num.experiments) {
     results <- vector("double")
     len.treatment = length(treatment)
@@ -66,16 +67,3 @@ children.control = c(55.0, 72.0, 72.7)
 # fisher.exact(children.treatment, children.control, 0, 1000)
 fisher.df(children.treatment, children.control, 0, 100)
 
-library("Matching")
-library("rgenoud")
-library("rbounds")
-
-D<-GerberGreenImai$PHN.C1 #treatment phone calls
-Y<-GerberGreenImai$VOTED98 #outcome, turnout
-X  <- fitted(pscore.glm)
-
-gen.weights <- GenMatch(Tr=D, X=X)
-summary(gen.weights)
-gen.match <- Match(Y=Y, Tr=D, X=X, Weight.matrix=gen.weights)
-summary(gen.match)
-psens(gen.match, Gamma=2, GammaInc=.05)

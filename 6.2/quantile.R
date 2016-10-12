@@ -3,6 +3,7 @@ library("rgenoud")
 library("rbounds")
 library("quantreg")
 library("ggplot2")
+library("plyr")
 
 data(lalonde)
 attach(lalonde)
@@ -26,12 +27,14 @@ ll.quantile.diffs = ll.treated.quantile - ll.control.quantile
 ll.treated.df = data.frame(Y=ll.treated)
 ll.control.df = data.frame(Y=ll.control)
 ggplot() + geom_density(data=ll.treated.df, aes(Y, color='#FF0000')) + geom_density(data=ll.control.df, aes(Y, color='#00FF00')) +
-    + xlab("Outcome - re78 / 1000") + ylab("Density") + ggtitle("Outcome variable distribution density plots")
+    xlab("Outcome - re78 / 1000") + ylab("Density") + ggtitle("Outcome variable distribution density plots")
+
+ggplot() + stat_ecdf(data=ll.treated.df, aes(Y, color='#FF0000')) + stat_ecdf(data=ll.control.df, aes(Y, color='#00FF00')) +
+    xlab("Outcome - re78 / 1000") + ylab("Cumulative Density") + ggtitle("Outcome variable CDF Plots")
 
 ll.quantile.df = data.frame(treated=ll.treated.quantile, control=ll.control.quantile, quantile=seq(0, 100, 5))
-ggplot(data=ll.quantile.df) + geom_point(aes(x=quantile, y=treated, color='#FF0000', label='Treatment')) + geom_point(aes(x=quantile, y=control, color='#00FF00')) +
-    + legend("Hello") +
-    xlab("Quantile") + ylab("Outcome - re78 / 1000") + ggtitle("Quantile value plots for control vs. treatment")
+ggplot(data=ll.quantile.df) + geom_point(aes(x=quantile, y=treated, color='#FF0000', label='Treatment')) + geom_point(aes(x=quantile, y=control, color='#00FF00')) 
+    + xlab("Quantile") + ylab("Outcome - re78 / 1000") + ggtitle("Quantile value plots for control vs. treatment")
 
 ll.qr <- rq(Y~age + educ + black + hisp + married + nodegr + u74 + u75 + re75 + re74 + I(re74*re75), data = lalonde, tau=seq(0,1,0.05))
 plot.rqs(ll.qr)
