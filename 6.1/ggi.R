@@ -2,6 +2,7 @@ library("Matching")
 library("rgenoud")
 library("rbounds")
 library("plyr")
+library("ggplot2")
 data("GerberGreenImai")
 
 D<-GerberGreenImai$PHN.C1 #treatment phone calls
@@ -22,13 +23,13 @@ summary(gen.weights)
 gen.match <- Match(Y=Y, Tr=D, X=ggi.balance.subset, Weight.matrix=gen.weights)
 summary(gen.match)
 psens(gen.match, Gamma=10, GammaInc=.5)
-cps.match.balance  <- MatchBalance(D ~ AGE + AGE2 + PERSONS + VOTE96.1 + NEW + MAJORPTY +
+ggi.match.balance  <- MatchBalance(D ~ AGE + AGE2 + PERSONS + VOTE96.1 + NEW + MAJORPTY +
                                        + WARD + I(PERSONS*VOTE96.1) + I(PERSONS*NEW), data=GerberGreenImai, match.out=gen.match, nboots=10)
 
 
 ggi.pca.subset = data.frame(cbind(PERSONS, QUESTION, PHONEGRP, APPEAL, log(AGE), MAJORPTY, VOTE96.0, VOTE96.1, VOTED98, 
                        PHNSCRPT, DIS.PHN, PHN.C, PHNTRT1, PHNTRT2, PHN.C1, PHN.C2, NEW, log(AGE2)))
-ggi.pca <- prcomp(ggi.pca.subset, center=TRUE, scale=TRUE)
+ggi.pca <- prcomp(ggi.pca.subset, center=TRUE, scale.=TRUE)
 summary(ggi.pca)
 ggi.props <- data.frame(props=ggi.pca$sdev^2 / sum(ggi.pca$sdev ^ 2))
 ggi.props <- mutate(ggi.props, cumulative=cumsum(props))

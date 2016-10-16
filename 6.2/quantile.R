@@ -26,10 +26,22 @@ ll.quantile.diffs = ll.treated.quantile - ll.control.quantile
 
 ll.treated.df = data.frame(Y=ll.treated)
 ll.control.df = data.frame(Y=ll.control)
-ggplot() + geom_density(data=ll.treated.df, aes(Y, color='#FF0000')) + geom_density(data=ll.control.df, aes(Y, color='#00FF00')) +
-    xlab("Outcome - re78 / 1000") + ylab("Density") + ggtitle("Outcome variable distribution density plots")
+ggplot() + geom_density(data=ll.treated.df, aes(Y), color='#FF0000') + geom_density(data=ll.control.df, aes(Y), color='#0000FF') +
+    geom_vline(xintercept = median(ll.treated.df$Y), color='#FF8888') + 
+    geom_vline(xintercept = median(ll.control.df$Y), color='#8888FF') +
+    geom_text(aes(x=median(ll.treated.df$Y) + 2, label=median(ll.treated.df$Y), y=0.12), color="red") + 
+    geom_text(aes(x=median(ll.control.df$Y) - 3, label=median(ll.control.df$Y), y=0.102), color="blue") +
+    geom_text(aes(x=median(ll.treated.df$Y)-median(ll.control.df$Y) + 1, label=paste('Median', '\n', median(ll.treated.df$Y)-median(ll.control.df$Y)), y=0.01), color="black") +
+    geom_vline(xintercept = quantile(ll.treated.df$Y, 0.8), color='#FF8888') +
+    geom_vline(xintercept = quantile(ll.control.df$Y, 0.8), color='#8888FF') +   
+    geom_text(aes(x=quantile(ll.control.df$Y, 0.8) + 1, label='80%', y=0.01), color="black") +
+    geom_vline(xintercept = quantile(ll.treated.df$Y, 0.9), color='#FF8888') +
+    geom_vline(xintercept = quantile(ll.control.df$Y, 0.9), color='#8888FF') +
+    geom_text(aes(x=quantile(ll.control.df$Y, 0.95) - 1, label='95%', y=0.005), color="black") +
+    xlab("Outcome - re78 / 1000") + ylab("Density") + 
+    ggtitle("Outcome variable distribution density plots") + theme(axis.line=element_line(color='#FFFFFF')) 
 
-ggplot() + stat_ecdf(data=ll.treated.df, aes(Y, color='#FF0000')) + stat_ecdf(data=ll.control.df, aes(Y, color='#00FF00')) +
+ggplot() + stat_ecdf(data=ll.treated.df, aes(Y), color='#FF0000') + stat_ecdf(data=ll.control.df, aes(Y), color='#0000FF') +
     xlab("Outcome - re78 / 1000") + ylab("Cumulative Density") + ggtitle("Outcome variable CDF Plots")
 
 ll.quantile.df = data.frame(treated=ll.treated.quantile, control=ll.control.quantile, quantile=seq(0, 100, 5))
