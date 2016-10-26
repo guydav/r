@@ -182,3 +182,17 @@ length(unique(sample.pca.match$index.treated))
 length(unique(sample.pca.match$index.control))
 sample.pca.match$est
 sample.pca.match$se
+
+source("./daughter_effect/dataverse_files/modelDep.R")
+pruned.sample = sample.df[c(sample.pca.match$index.treated, sample.pca.match$index.control), ]
+weights.vec = as.vector(cbind(sample.pca.match$weights, sample.pca.match$weights))
+md <- modelDep(formula=nowtot ~ ngirls + totchi + gender + race + repub + srvlng + region + age + rgroup + demvote,
+               data=pruned.sample,
+               tevar="ngirls",
+               weights = weights.vec,
+               alpha = 0.2)
+te.no.na = na.omit(md$TE)
+qplot(te.no.na, geom = "density", main="PCA-ATC matched TE estimate, alpha = 0.2")
+length(te.no.na)
+mean(te.no.na)
+sd(te.no.na)

@@ -179,4 +179,16 @@ length(unique(sample.match$index.control))
 sample.match$est
 sample.match$se
 
-
+source("./daughter_effect/dataverse_files/modelDep.R")
+pruned.sample = sample.df[c(sample.match$index.treated, sample.match$index.control), ]
+weights.vec = as.vector(cbind(sample.match$weights, sample.match$weights))
+md <- modelDep(nowtot ~ ngirls + totchi + gender + race + repub + srvlng + region + age + rgroup + demvote,
+         data=pruned.sample,
+         tevar="ngirls",
+         weights=weights.vec,
+         alpha = 0.1)
+te.no.na = na.omit(md$TE)
+qplot(te.no.na, geom = "density", main="ATC matched TE estimate")
+length(te.no.na)
+mean(te.no.na)
+sd(te.no.na)
