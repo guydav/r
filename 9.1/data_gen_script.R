@@ -1,5 +1,3 @@
-
-
 size <- 200
 cutoff <- 0.666
 
@@ -21,9 +19,19 @@ data[data$y.before > cutoff,'y.after'] = data[data$y.before > cutoff,'y.after'] 
 qplot(data$y.before, data$y.after)
 write.csv(data, file="9.1/data_upgraded.csv")
 
+library(rdrobust)
+rdrobust(data$y.after, data$y.before, c = cutoff, cov=cbind(cholesterol,age,weight,height,married), all = TRUE)
+rdrobust(data$y.after, data$y.before, c = cutoff)
+rdplot(data$y.after, data$y.before, c = cutoff, title = "Without Covariates")
+rdplot(data$y.after, data$y.before, c = cutoff , title = "With Covariates")
+
+
+
 library("ggplot2")
 ggplot(data=data, aes(x=y.before, y=y.after)) + geom_point() +
     geom_vline(xintercept = cutoff, linetype = "longdash") +
+    geom_vline(xintercept = cutoff - 0.0427, linetype = 8, colour = 'blue') +
+    geom_vline(xintercept = cutoff + 0.0427, linetype = 8, colour = 'blue') +
     xlab("Predicted Pre-Treatment Mortality Rate") + 
     ylab("Predicted Post-Treatment Mortality Rate") +
     ggtitle("Regression Discontinuity Design Graph") +
