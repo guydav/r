@@ -12,13 +12,10 @@ names <- randomNames(size, which.names = 'first')
 genetic.factor <- runif(size, 0, 1)
 error <- rnorm(size, 0, 0.5)
 
-min.height <- min(height)
-min.length <- min(length)
-
-outcome <- 2 + (height - min.height) / 10  + (length - min.length) / 10 + genetic.factor - treatment * gender - 0.5 * treatment * (1 - gender) + error
+outcome <- height / 10 + length / 10 + 2 * genetic.factor - 1.5 * (treatment * gender + 2 * treatment * (1 - gender)) + error
 
 fat.cats <- data.frame(name=names, color=cat.color, gender=gender,
-                          height=height, lenght=length, genetics=genetic.factor,
+                          height=height, length=length, genetics=genetic.factor,
                           treatment=treatment, outcome=outcome)
 
 fat.cats.test <- fat.cats[sample(nrow(fat.cats), size.test),]
