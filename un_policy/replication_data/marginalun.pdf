@@ -1,0 +1,3048 @@
+%!PS-Adobe-2.0 EPSF-1.2
+%%Creator: PGL v-2.00 by AnSoft, Inc.
+%%Pages:  1
+%%BoundingBox: 0 0 611 791
+%%EndComments
+%---------------------------------------------------------------------
+%
+%------------------ Copyright (C) 1991 AnSoft,Inc.--------------------
+%
+%---------------------------------------------------------------------
+% Temporary variables used
+%---------------------------------------------------------------------
+%  PROC          VARIABLES
+%  PatternFill : fx1,fx2,fy1,fy2,fwidth
+%
+%---------------------------------------------------------------------
+%  PGL Global Data
+%---------------------------------------------------------------------
+/LineColor 1   def  % -1 turns off Line & Outline drawing
+/LineStyle []  def  % 
+/Phase     0   def  %
+/AreaColor 1   def  % -1 turns off Area Fills
+/FillFlag  1   def  % 1-Outline, 2-Fill, 3-Both
+/FillStyle 0   def  % 
+/FillMode  1   def  %  1-opaque, 0-transparent
+/MaxColor  15  def  %
+/CurFont   0   def  % FontNames index
+/topFlagV  0   def  % Text Justification(Vertical) Flags 
+/ctrFlagV  0   def  %                   (Vertical)
+/ctrFlagH  0   def  %                   (Horizonal)
+/LineWidth 1   def  %
+/UnitWidth 1   def  % Unit Line thickness in 1/300'ths inches
+/PatSize   3   def  % Fill Pattern Scale Factor
+/PatChar   1   def  % Fill Pattern Ascii Value
+/UserChar  85  def  % UserFill Pattern Ascii Value
+/FillChar  (?) def  % UserFill Pattern Ascii Value
+/UserFillPat <0000000000000000> def %- empty fill by default
+
+%--------------------------------------------------------------------
+% Bitmap support
+%--------------------------------------------------------------------
+/rleFlag   1 string def
+/rleStr    2 string def
+/bmStr     1 string def
+
+%--------------------------------------------------------------------
+%  Color Tables and Mappings
+%--------------------------------------------------------------------
+/bwColors 256 array def
+0 1 255 { bwColors exch 0 put } for  % zero all colors to black
+bwColors 0 1 put                     % index 0 - white, all others black
+
+/grayColors 256 array def
+0 1 255 { grayColors exch 0 put } for  % zero all colors to black
+grayColors  0  1.00 put 
+grayColors  1  0.11 put 
+grayColors  2  0.59 put 
+grayColors  3  0.70 put 
+grayColors  4  0.30 put 
+grayColors  5  0.41 put 
+grayColors  6  0.40 put 
+grayColors  7  0.97 put 
+grayColors  8  0.50 put 
+grayColors  9  0.40 put 
+grayColors  10 0.73 put 
+grayColors  11 0.80 put 
+grayColors  12 0.53 put 
+grayColors  13 0.60 put 
+grayColors  14 0.93 put 
+grayColors  15 0.00 put 
+
+/rgbColors 256 array def
+0 1 255 { rgbColors exch [0 0 0] put } for  % zero all colors to black
+rgbColors  0  [1 1 1]           put         % white
+rgbColors  1  [0 0 1]           put         % blue
+rgbColors  2  [0 1 0]           put         % green
+rgbColors  3  [0 1 1]           put         % cyan
+rgbColors  4  [1 0 0]           put         % red
+rgbColors  5  [1 0 1]           put         % magenta
+rgbColors  6  [0.67  0.33  0]   put         % brown
+rgbColors  7  [0.9 0.9 0.9]     put         % darkgray
+rgbColors  8  [0.75 0.75 0.75]  put         % lightgray
+rgbColors  9  [0.33 0.33 1]     put         % lightblue
+rgbColors  10 [0.33  1 0.33]    put         % lightgreen
+rgbColors  11 [0.33 1 1]        put         % lightcyan
+rgbColors  12 [1 0.33  0.33]    put         % lightred
+rgbColors  13 [1 0.33  1]       put         % lightmagenta
+rgbColors  14 [1 1 0.33]        put         % yellow
+rgbColors  15 [0 0 0]           put         % black
+        
+/ColorModel  0 def
+/ColorChoices [ bwColors grayColors rgbColors ] def
+/ColorMap ColorChoices ColorModel get def   % default colors=b&w
+
+%--------------------------------------------------------------------
+%----Page Size, Set By Main Pgm
+%--------------------------------------------------------------------
+%
+/PX  1950 def
+/PY  1194 def
+
+%--------------------------------------------------------------------
+%----Text Scale Factors
+%--------------------------------------------------------------------
+/SX  1800 def   % Base size of page width/height, 
+/SY  1194 def   % for scaling fonts against
+
+/FSX  [  6  7   8  10  12  9  10 ] def  % Unit Font Scale factors
+/FSY  [ -2.3  -4.6 -4.6 -4.6 -4.6 -4.6 -4.6 ] def  % Neg's to invert Y axis
+
+%--------------------------------------------------------------------
+%---- Users Font Scale Factors
+%--------------------------------------------------------------------
+/FSXN 1 def
+/FSXD 1 def
+/FSYN 1 def
+/FSYD 1 def
+
+%---------------------------------------------------------------------
+%  Fonts Names Used by PGL
+%  These replace the following vector fonts provided with PGL
+%  If you change these you may need to change the scale factors
+%  in FSX and FSY.
+%---------------------------------------------------------------------
+/FontNames
+[
+  /Helvetica          % small
+  /Courier            % simplex
+  /Helvetica          % duplex
+  /Times-Roman        % triplex
+  /Times-BoldItalic   % gothic 
+  /Courier-Oblique    % script simplex
+  /Helvetica-Oblique  % script duplex
+] def
+
+%---------------------------------------------------------------------
+%  Fill Pattern Font based on "PS Lang Ref Man (Red Book) - Chap 5"
+%---------------------------------------------------------------------
+/newfont 10 dict def
+newfont 
+begin
+ /FontType 3 def
+ /FontMatrix [ .125 0 0 .125 0 0 ] def
+ /FontBBox   [ 0 0 8 8 ]     def
+
+ /Encoding 256 array def
+ 0 1 255 { Encoding exch /.notdef put } for
+ Encoding 1  /empty     put  % '0'
+ Encoding 2  /solid     put  % '1'
+ Encoding 3  /lfill     put  % '2'
+ Encoding 4  /slash     put  % '3'
+ Encoding 5  /hslash    put  % '4'
+ Encoding 6  /hbkslash  put  % '5'
+ Encoding 7  /bkslash   put  % '6'
+ Encoding 8  /hatch     put  % '7'
+ Encoding 9  /xhatch    put  % '8'
+ Encoding 10 /intleav   put  % '9'
+ Encoding 11 /widedot   put  % '10'
+ Encoding 12 /closedot  put  % '11'
+ Encoding 13 /pat13 put
+ Encoding 14 /pat14 put
+ Encoding 15 /pat15 put
+ Encoding 16 /pat16 put
+ Encoding 17 /pat17 put
+ Encoding 18 /pat18 put
+ Encoding 19 /pat19 put
+ Encoding 20 /pat20 put
+ Encoding 21 /pat21 put
+ Encoding 22 /pat22 put
+ Encoding 23 /pat23 put
+ Encoding 24 /pat24 put
+ Encoding 25 /pat25 put
+ Encoding 26 /pat26 put
+ Encoding 27 /pat27 put
+ Encoding 28 /pat28 put
+ Encoding 29 /pat29 put
+ Encoding 30 /pat30 put
+ Encoding 31 /pat31 put
+ Encoding 32 /pat32 put
+ Encoding 33 /pat33 put
+ Encoding 34 /pat34 put
+ Encoding 35 /pat35 put
+ Encoding 36 /pat36 put
+ Encoding 37 /pat37 put
+ Encoding 38 /pat38 put
+ Encoding 39 /pat39 put
+ Encoding 40 /pat40 put
+ Encoding 41 /pat41 put
+ Encoding 42 /pat42 put
+ Encoding 43 /pat43 put
+ Encoding 44 /pat44 put
+ Encoding 45 /pat45 put
+ Encoding 46 /pat46 put
+ Encoding 47 /pat47 put
+ Encoding 48 /pat48 put
+ Encoding 49 /pat49 put
+ Encoding 50 /pat50 put
+ Encoding 51 /pat51 put
+ Encoding 52 /pat52 put
+ Encoding 53 /pat53 put
+ Encoding 54 /pat54 put
+ Encoding 55 /pat55 put
+ Encoding 56 /pat56 put
+ Encoding 57 /pat57 put
+ Encoding 58 /pat58 put
+ Encoding 59 /pat59 put
+ Encoding 60 /pat60 put
+ Encoding 61 /pat61 put
+ Encoding 62 /pat62 put
+ Encoding 63 /pat63 put
+ Encoding 64 /pat64 put
+ Encoding 65 /pat65 put
+ Encoding 66 /pat66 put
+ Encoding 67 /pat67 put
+ Encoding 68 /pat68 put
+ Encoding 69 /pat69 put
+ Encoding 70 /pat70 put
+ Encoding 71 /pat71 put
+ Encoding 72 /pat72 put
+ Encoding 73 /pat73 put
+ Encoding 74 /pat74 put
+ Encoding 75 /pat75 put
+ Encoding 76 /pat76 put
+ Encoding 77 /pat77 put
+ Encoding 78 /pat78 put
+ Encoding 79 /pat79 put
+ Encoding 80 /pat80 put
+ Encoding 81 /pat81 put
+ Encoding 82 /pat82 put
+ Encoding 83 /pat83 put
+ Encoding 84 /pat84 put
+
+ Encoding  85 /patfill   put  % '12'
+
+ /CharProcs 86 dict def
+ CharProcs 
+ begin
+ /.notdef {} bind def
+ /empty    { 8 8 true [1 0 0 1 0 0] { <0000000000000000> } imagemask } bind def
+ /solid    { 8 8 true [1 0 0 1 0 0] { <ffffffffffffffff> } imagemask } bind def
+ /lfill    { 8 8 true [1 0 0 1 0 0] { <ffff0000ffff0000> } imagemask } bind def
+ /slash    { 8 8 true [1 0 0 1 0 0] { <0102040810204080> } imagemask } bind def 
+ /hslash   { 8 8 true [1 0 0 1 0 0] { <e0c183070e1c3870> } imagemask } bind def 
+ /hbkslash { 8 8 true [1 0 0 1 0 0] { <f0783c1e0f87c3e1> } imagemask } bind def 
+ /bkslash  { 8 8 true [1 0 0 1 0 0] { <a5d269b45a2d964b> } imagemask } bind def 
+ /hatch    { 8 8 true [1 0 0 1 0 0] { <ff888888ff888888> } imagemask } bind def 
+ /xhatch   { 8 8 true [1 0 0 1 0 0] { <8142241818244281> } imagemask } bind def 
+ /intleav  { 8 8 true [1 0 0 1 0 0] { <cc33cc33cc33cc33> } imagemask } bind def 
+ /widedot  { 8 8 true [1 0 0 1 0 0] { <8000080080000800> } imagemask } bind def 
+ /closedot { 8 8 true [1 0 0 1 0 0] { <8800220088002200> } imagemask } bind def 
+ /pat13  { 8 8 true [1 0 0 1 0 0] { <aa55aa55aa55aa55> } imagemask } bind def
+ /pat14  { 8 8 true [1 0 0 1 0 0] { <aa00aa00aa00aa00> } imagemask } bind def
+ /pat15  { 8 8 true [1 0 0 1 0 0] { <8000000008000000> } imagemask } bind def
+ /pat16  { 8 8 true [1 0 0 1 0 0] { <8000000000000000> } imagemask } bind def
+ /pat17  { 8 8 true [1 0 0 1 0 0] { <8100001818000081> } imagemask } bind def
+ /pat18  { 8 8 true [1 0 0 1 0 0] { <cccc3333cccc3333> } imagemask } bind def
+ /pat19  { 8 8 true [1 0 0 1 0 0] { <f0f0f0f00f0f0f0f> } imagemask } bind def
+ /pat20  { 8 8 true [1 0 0 1 0 0] { <7effffe7e7ffff7e> } imagemask } bind def
+ /pat21  { 8 8 true [1 0 0 1 0 0] { <0000001818000000> } imagemask } bind def
+ /pat22  { 8 8 true [1 0 0 1 0 0] { <55ffaaff55ffaaff> } imagemask } bind def
+ /pat23  { 8 8 true [1 0 0 1 0 0] { <77ffddff77ffddff> } imagemask } bind def
+ /pat24  { 8 8 true [1 0 0 1 0 0] { <aa005500aa005500> } imagemask } bind def
+ /pat25  { 8 8 true [1 0 0 1 0 0] { <aa11aa44aa11aa44> } imagemask } bind def
+ /pat26  { 8 8 true [1 0 0 1 0 0] { <ff888888ff222222> } imagemask } bind def
+ /pat27  { 8 8 true [1 0 0 1 0 0] { <ff080808ff808080> } imagemask } bind def
+ /pat28  { 8 8 true [1 0 0 1 0 0] { <0040a00000040a00> } imagemask } bind def
+ /pat29  { 8 8 true [1 0 0 1 0 0] { <ff80808080808080> } imagemask } bind def
+ /pat30  { 8 8 true [1 0 0 1 0 0] { <ff818181818181ff> } imagemask } bind def
+ /pat31  { 8 8 true [1 0 0 1 0 0] { <fe82baaaba82fe00> } imagemask } bind def
+ /pat32  { 8 8 true [1 0 0 1 0 0] { <0044281028440000> } imagemask } bind def
+ /pat33  { 8 8 true [1 0 0 1 0 0] { <8844201000002010> } imagemask } bind def
+ /pat34  { 8 8 true [1 0 0 1 0 0] { <0040201000010204> } imagemask } bind def
+ /pat35  { 8 8 true [1 0 0 1 0 0] { <0010284428100000> } imagemask } bind def
+ /pat36  { 8 8 true [1 0 0 1 0 0] { <0008083e08080000> } imagemask } bind def
+ /pat37  { 8 8 true [1 0 0 1 0 0] { <8844220088442200> } imagemask } bind def
+ /pat38  { 8 8 true [1 0 0 1 0 0] { <1122440011224400> } imagemask } bind def
+ /pat39  { 8 8 true [1 0 0 1 0 0] { <cccccccccccccccc> } imagemask } bind def
+ /pat40  { 8 8 true [1 0 0 1 0 0] { <8040201008040201> } imagemask } bind def
+ /pat41  { 8 8 true [1 0 0 1 0 0] { <0b172e5dba74e8d0> } imagemask } bind def
+ /pat42  { 8 8 true [1 0 0 1 0 0] { <0f1f3f7ffefcf8f0> } imagemask } bind def
+ /pat43  { 8 8 true [1 0 0 1 0 0] { <c0e070381c0e0703> } imagemask } bind def
+ /pat44  { 8 8 true [1 0 0 1 0 0] { <0002040200204020> } imagemask } bind def
+ /pat45  { 8 8 true [1 0 0 1 0 0] { <1f11f1111f11f111> } imagemask } bind def
+ /pat46  { 8 8 true [1 0 0 1 0 0] { <f11111111f111111> } imagemask } bind def
+ /pat47  { 8 8 true [1 0 0 1 0 0] { <0102448801020000> } imagemask } bind def
+ /pat48  { 8 8 true [1 0 0 1 0 0] { <0010284444380000> } imagemask } bind def
+ /pat49  { 8 8 true [1 0 0 1 0 0] { <c183070e1c3870e0> } imagemask } bind def
+ /pat50  { 8 8 true [1 0 0 1 0 0] { <e1c3870f1e3c78f0> } imagemask } bind def
+ /pat51  { 8 8 true [1 0 0 1 0 0] { <a54b962d5ab469d2> } imagemask } bind def
+ /pat52  { 8 8 true [1 0 0 1 0 0] { <d0e874ba5d2e170b> } imagemask } bind def
+ /pat53  { 8 8 true [1 0 0 1 0 0] { <f0f8fcfe7f3f1f0f> } imagemask } bind def
+ /pat54  { 8 8 true [1 0 0 1 0 0] { <03070e1c3870e0c0> } imagemask } bind def
+ /pat55  { 8 8 true [1 0 0 1 0 0] { <0000182444241800> } imagemask } bind def
+ /pat56  { 8 8 true [1 0 0 1 0 0] { <ff7e3c18183c7eff> } imagemask } bind def
+ /pat57  { 8 8 true [1 0 0 1 0 0] { <ff00000000000000> } imagemask } bind def
+ /pat58  { 8 8 true [1 0 0 1 0 0] { <8080808080808080> } imagemask } bind def
+ /pat59  { 8 8 true [1 0 0 1 0 0] { <ff000000ff000000> } imagemask } bind def
+ /pat60  { 8 8 true [1 0 0 1 0 0] { <8888888888888888> } imagemask } bind def
+ /pat61  { 8 8 true [1 0 0 1 0 0] { <5555aaaa5555aaaa> } imagemask } bind def
+ /pat62  { 8 8 true [1 0 0 1 0 0] { <ff00ff00ff00ff00> } imagemask } bind def
+ /pat63  { 8 8 true [1 0 0 1 0 0] { <aaaaaaaaaaaaaaaa> } imagemask } bind def
+ /pat64  { 8 8 true [1 0 0 1 0 0] { <f00000000f000000> } imagemask } bind def
+ /pat65  { 8 8 true [1 0 0 1 0 0] { <0808080880808080> } imagemask } bind def
+ /pat66  { 8 8 true [1 0 0 1 0 0] { <20508f5020202020> } imagemask } bind def
+ /pat67  { 8 8 true [1 0 0 1 0 0] { <1028448344281010> } imagemask } bind def
+ /pat68  { 8 8 true [1 0 0 1 0 0] { <e0ffe04040404040> } imagemask } bind def
+ /pat69  { 8 8 true [1 0 0 1 0 0] { <f8f8fff8f8202020> } imagemask } bind def
+ /pat70  { 8 8 true [1 0 0 1 0 0] { <82050a142850a041> } imagemask } bind def
+ /pat71  { 8 8 true [1 0 0 1 0 0] { <41a05028140a0582> } imagemask } bind def
+ /pat72  { 8 8 true [1 0 0 1 0 0] { <10387cff7c381010> } imagemask } bind def
+ /pat73  { 8 8 true [1 0 0 1 0 0] { <fffefcf8f0e0c080> } imagemask } bind def
+ /pat74  { 8 8 true [1 0 0 1 0 0] { <80c0e0f0f8fcfeff> } imagemask } bind def
+ /pat75  { 8 8 true [1 0 0 1 0 0] { <c021120c08102040> } imagemask } bind def
+ /pat76  { 8 8 true [1 0 0 1 0 0] { <4020101824428180> } imagemask } bind def
+ /pat77  { 8 8 true [1 0 0 1 0 0] { <0609090600000000> } imagemask } bind def
+ /pat78  { 8 8 true [1 0 0 1 0 0] { <1824428118244281> } imagemask } bind def
+ /pat79  { 8 8 true [1 0 0 1 0 0] { <1122448888442211> } imagemask } bind def
+ /pat80  { 8 8 true [1 0 0 1 0 0] { <8244281010101000> } imagemask } bind def
+ /pat81  { 8 8 true [1 0 0 1 0 0] { <008040201e204080> } imagemask } bind def
+ /pat82  { 8 8 true [1 0 0 1 0 0] { <7fc1a2948894a2c1> } imagemask } bind def
+ /pat83  { 8 8 true [1 0 0 1 0 0] { <101028c70101827c> } imagemask } bind def
+ /pat84  { 8 8 true [1 0 0 1 0 0] { <1c121121c1211112> } imagemask } bind def
+ /patfill  { 8 8 true [1 0 0 1 0 0] { UserFillPat } imagemask } bind def 
+ end
+
+ /BuildChar
+ {
+    exch
+    begin  
+      dup UserChar eq{                 
+        8 0 setcharwidth            % userfillstyle
+      }{
+        8 0 0 0 8 8 setcachedevice  % standard fillstyle
+      }ifelse
+      Encoding exch get  
+      CharProcs exch get 
+    end
+    exec
+ }def
+end 
+
+/FillFont newfont definefont pop
+%----- End Of Area Fill Font Def--------------------------------------
+
+%---------------------------------------------------------------------
+%  PGL Redefinitions
+%---------------------------------------------------------------------
+/gs   { gsave } bind def         
+/gr   { grestore } bind def  
+/m    { moveto } bind def        
+/l    { lineto currentpoint stroke moveto } bind def  
+/rm   { rmoveto } bind def       
+/rl   { rlineto } bind def  
+/cp   { closepath } bind def     
+/np   { newpath } bind def   
+/sg   { setgray } bind def       
+/st   { stroke } bind def     
+/sd   { setdash } bind def       
+/ex   { exch } bind def
+/in   { index } bind def         
+/sw   { stringwidth } bind def 
+/cxy  { currentpoint } bind def  
+/slw  { setlinewidth } bind def 
+
+%---------------------------------------------------------------------
+% str strlen nchars
+%---------------------------------------------------------------------
+/strlen
+{
+    dup           % str str
+    /itmp 0 def
+    { /itmp itmp 1 add def pop } forall  % count characters
+    itmp          % nchars
+} bind def
+
+%---------------------------------------------------------------------
+% string txtCtrH   % Center Justify a string Horiz
+%---------------------------------------------------------------------
+/txtCtrH { dup sw pop 2 div neg dup 0 rm /ctrFlagH exch def } bind def 
+
+%---------------------------------------------------------------------
+% wx wy string atxtCtrH   % Center Justify a string Horiz
+%---------------------------------------------------------------------
+/atxtCtrH { 
+    3 -1 roll   % wy string wx
+    dup        % wy string wx wx
+    4 1 roll  % wx wy string wx
+    /xW ex def % wx wy string
+    strlen     % wx wy string nchars
+    xW mul
+    /xW ex def
+    dup        % str str
+    sw         % str wx wy
+    pop        % str wx
+    xW add     % str wx+xW
+    2 div neg 
+    dup 
+    0 rm 
+    /ctrFlagH exch def 
+} bind def 
+
+%---------------------------------------------------------------------
+% txtCtrHend   % Finish Center Justifying a string Horiz
+%                cp shoud be at center of string
+%---------------------------------------------------------------------
+/txtCtrHend { ctrFlagH 0 rm /ctrFlagH 0 def } bind def 
+
+%---------------------------------------------------------------------
+% string txtRtH   % Right Justify a string Horiz
+%---------------------------------------------------------------------
+/txtRtH  {dup sw pop neg 0 rm} bind def 
+
+%---------------------------------------------------------------------
+% string txtRtH   % Right Justify a string Horiz
+%---------------------------------------------------------------------
+/atxtRtH  {
+    3 -1 roll   % wy string wx
+    dup        % wy string wx wx
+    4 1 roll  % wx wy string wx
+    /xW ex def % wx wy string
+    strlen     % wx wy string nchars
+    xW mul
+    /xW ex def
+    dup 
+    sw 
+    pop 
+    xW add     % str wx+xW
+    neg 0 rm
+} bind def 
+
+%---------------------------------------------------------------------
+% txtCtrV  % Center Justify a string Vertically
+%---------------------------------------------------------------------
+/txtCtrV { gs np 0 0 m (X) true charpath flattenpath pathbbox ex pop 
+           sub neg 2 div 0 ex gr rm pop /ctrFlagV 1 def } bind def 
+
+%---------------------------------------------------------------------
+% txtCtrVend  % Center Justify a string Vertically
+%---------------------------------------------------------------------
+/txtCtrVend { gs np 0 0 m (X) true charpath flattenpath pathbbox ex pop 
+              sub neg 2 div 0 ex gr neg rm pop /ctrFlagV 0 def } bind def 
+
+%---------------------------------------------------------------------
+% string txtTopV  % Top Justify a string Vertically
+%---------------------------------------------------------------------
+/txtTopV { gs np 0 0 m (X) true charpath flattenpath pathbbox ex pop 
+           sub neg 0 ex gr rm pop /topFlagV 1 def } bind def 
+
+%---------------------------------------------------------------------
+% txtTopVend  % Top Justify a string Vertically
+%---------------------------------------------------------------------
+/txtTopVend { gs np 0 0 m (X) true charpath flattenpath pathbbox ex pop 
+           sub neg 0 ex gr neg rm pop /topFlagV 0 def } bind def 
+
+%---------------------------------------------------------------------
+%  ash   display text & readjusts cp for Top & Center Vertical
+%        text justification
+%---------------------------------------------------------------------
+/ash {
+   ashow
+   topFlagV 1 eq {
+     txtTopVend
+   } if
+   ctrFlagV 1 eq {
+     txtCtrVend
+   } if
+   ctrFlagH 0 ne {
+     txtCtrHend
+   } if
+} bind def
+
+%---------------------------------------------------------------------
+%  sh   display text & readjusts cp for Top & Center Vertical
+%       text justification
+%---------------------------------------------------------------------
+/sh {
+   show
+   topFlagV 1 eq {
+     txtTopVend
+   } if
+   ctrFlagV 1 eq {
+     txtCtrVend
+   } if
+   ctrFlagH 0 ne {
+     txtCtrHend
+   } if
+} bind def
+
+%---------------------------------------------------------------------
+% xs  % Extended Stroke 
+%---------------------------------------------------------------------
+/xs { 
+  LineColor -1 ne
+  { cxy st m }{ cxy np m }ifelse 
+} bind def                       
+
+%---------------------------------------------------------------------
+%  color SLC   % SetLineColor  % -1 turns off line drawing
+%---------------------------------------------------------------------
+/SLC { dup /LineColor exch def SCC }bind def
+
+%---------------------------------------------------------------------
+%  index [r g b] SRC   % SetRgbColor
+%---------------------------------------------------------------------
+/SRC { 
+/rgbTmp   exch def
+/rgbIndex exch def
+/rgbAbs   0.0  def
+rgbTmp 0 get 1. 255. div mul  rgbTmp exch 0 exch put
+rgbTmp 1 get 1. 255. div mul  rgbTmp exch 1 exch put
+rgbTmp 2 get 1. 255. div mul  rgbTmp exch 2 exch put
+rgbColors rgbIndex rgbTmp put  
+rgbTmp { dup mul rgbAbs add /rgbAbs exch def } forall
+grayColors rgbIndex rgbAbs sqrt put
+}bind def
+
+%---------------------------------------------------------------------
+%  color SCC  % SetCurColor
+%---------------------------------------------------------------------
+/SCC { 
+  dup -1 ne 
+  { % -1 turns of line drawing
+     ColorMap exch get 
+     dup type /arraytype ne { 
+       setgray 
+     }{ 
+       {} forall setrgbcolor 
+     } ifelse
+  }{ 
+     pop  % remove -1 from stack
+  }ifelse
+}bind def
+
+%---------------------------------------------------------------------
+%  [] phase SLS  % SetLineStyle
+%---------------------------------------------------------------------
+/SLS { 
+   /Phase exch def
+   /LineStyle exch def 
+   LineStyle Phase setdash 
+}bind def
+
+%---------------------------------------------------------------------
+%  width SLW % SetLineWidth ( 1/300 inch )
+%---------------------------------------------------------------------
+/SLW { 
+   /LineWidth exch def 
+   LineWidth UnitWidth mul setlinewidth 
+}bind def
+
+%---------------------------------------------------------------------
+%   color SFC % SetFillColor
+%---------------------------------------------------------------------
+/SFC {  /AreaColor exch def }bind def
+
+%---------------------------------------------------------------------
+%  <pattern> SUF  % SetUserFill pattern = hex no 
+%---------------------------------------------------------------------
+/SUF {  
+    /UserFillPat exch def  % set pattern
+    /FillStyle 84 def      % set flag
+}bind def
+
+%---------------------------------------------------------------------
+%  style SFS  % SetFillStyle style no (0-11)
+%---------------------------------------------------------------------
+/SFS {  /FillStyle exch def }bind def
+
+%---------------------------------------------------------------------
+%  mode SFM  % SetFillMode   ( 1-Opaque, 2-Transparent)
+%---------------------------------------------------------------------
+/SFM {  /FillMode exch def }bind def
+
+%---------------------------------------------------------------------
+%  fontno SCF SetCurFont
+%---------------------------------------------------------------------
+/SCF {
+ dup  /CurFont exch def        % save font no.
+ FontNames exch get findfont 
+   [ FSX CurFont get FSXN mul FSXD div PX mul SX div 0 0
+     FSY CurFont get FSYN mul FSYD div PY mul SY div 0 0 ]
+   makefont setfont 
+ }bind def
+
+%---------------------------------------------------------------------
+%  xn xd yn yd SFX    % SetFontScale
+%---------------------------------------------------------------------
+/SFX {
+  /FSYD exch def    /FSYN exch def  
+  /FSXD exch def    /FSXN exch def
+  CurFont SCF
+}bind def
+
+%---------------------------------------------------------------------
+%  [ f1 f2 f3 f4 f5 f6 f7 ] SFNS   % SetFontNames
+%---------------------------------------------------------------------
+/SFNS {
+  /FontNames exch def
+}bind def
+
+%---------------------------------------------------------------------
+% [7 xsizes] [7 ysizes] SFZ  % SetFontSizes
+%---------------------------------------------------------------------
+/SFSZ {
+  /FSY exch def
+  /FSX exch def
+}bind def
+
+%---------------------------------------------------------------------
+%  px py SPS  % SetPageSize
+%---------------------------------------------------------------------
+/SPS { /PY exch def  /PX exch def }bind def
+
+%---------------------------------------------------------------------
+%  x y color Pix  % SetPixel  1-Pixel = 1/300" pixel!
+%---------------------------------------------------------------------
+/Pix { 
+gsave                        %
+SCC moveto                   % set color & position
+1 setlinewidth [] 0 setdash  % set attributes
+1 0 rlineto stroke           % do it!
+grestore                     %
+} bind def                       
+
+%---------------------------------------------------------------------
+%  x1 x2 y2 y2 Ln  % Line
+%---------------------------------------------------------------------
+/Ln { gs np 4 -2 roll m l st gr } bind def                       
+
+%---------------------------------------------------------------------
+%  x1 y1 x2 y2 flag Rect   (flag: 1-outline,2-fill,3-both)
+%---------------------------------------------------------------------
+/Rect { 
+    /FillFlag exch def 
+    gs np DrawRect FillArea OutLine gr 
+} bind def
+
+%---------------------------------------------------------------------
+% x1 y1 x2 y2 x3 y3 .... flag PolyF  % PolyFill - fill current path
+%---------------------------------------------------------------------
+/PolyF { 
+    /FillFlag exch def 
+    gs closepath FillArea OutLine gr 
+} bind def
+
+%---------------------------------------------------------------------
+%  x1 y1 x2 y2 ClipR % ClipRect 
+%---------------------------------------------------------------------
+/ClipR { 
+    cxy 6 2 roll       % cx cy x1 y1 x2 y2
+    gr gs
+    0 setlinewidth
+    np DrawRect eoclip np 
+    m 
+    %-- Reset graphics state
+    LineWidth SLW
+    LineColor SLC
+    FSXN FSXD FSYN FSYD SFX
+    CurFont   SCF
+    LineStyle 0 setdash
+} bind def
+
+%-PRIVATE-------------------------------------------------------------
+%  x1 y1 x2 y2 DrawRect 
+%---------------------------------------------------------------------
+/DrawRect { 
+    3 in 3 in moveto 
+    1 in 3 in lineto 
+    3 in 1 in 4 -2 roll lineto lineto pop pop closepath % lineto
+} bind def
+
+%-PRIVATE-------------------------------------------------------------
+%  xc yc sa ea rx ry DrawArc    
+%---------------------------------------------------------------------
+/DrawArc { 
+   /savematrix matrix currentmatrix def 
+   6 -2 roll translate    
+   scale 
+   0 0 1 5 -2 roll 
+   1 -1 scale arc 1 -1 scale
+   savematrix setmatrix
+}bind def
+
+%---------------------------------------------------------------------
+%  xc yc sa ea rx ry Arc
+%---------------------------------------------------------------------
+/Arc { gs np DrawArc [] 0 sd st gr } bind def   
+
+%---------------------------------------------------------------------
+%  xc yc sa ea rx ry flag Pie   (flag: 1-Outline,2-Fill,3-Both)
+%---------------------------------------------------------------------
+/Pie { 
+    /FillFlag exch def
+    gs np 6 -2 roll 2 copy 2 copy m 8 4 roll 
+    DrawArc cp FillArea OutLine gr 
+} bind def   
+
+%---------------------------------------------------------------------
+%  xc yc rx ry flag ELLIPSE (flag: 1-Outline,2-Fill,3-Both)
+%---------------------------------------------------------------------
+/Ellipse { 
+    /FillFlag exch def
+     gs np 0 360 4 2 roll DrawArc FillArea OutLine gr 
+}bind def   
+
+%-PRIVATE-------------------------------------------------------------
+%  OutLine
+%---------------------------------------------------------------------
+/OutLine  { 
+  FillFlag 1 and 1 eq { 
+    [] 0 sd LineColor SCC st 
+  }if 
+}bind def
+
+%-PRIVATE-------------------------------------------------------------
+%  FillArea  - fills current path
+%---------------------------------------------------------------------
+/FillArea { 
+  FillFlag 2 and 2 eq { 
+     gs 
+;     eoclip 
+     clippath
+     AreaColor SCC
+     PatternFill
+     gr
+  }if 
+}bind def
+
+%-PRIVATE-------------------------------------------------------------
+%  PatternFill 
+%---------------------------------------------------------------------
+/PatternFill {
+   /psize 8 PatSize mul def
+   /FillFont findfont psize scalefont setfont % set Pattern font
+   FillChar 0 FillStyle PatChar add put               % fill char index
+   FillMode 1 eq { gsave 1 setgray fill grestore }if  % erase background
+   pathbbox                                           % llx lly  urx ury
+   newpath              
+   ceiling cvi /fy2 exch def 
+   ceiling cvi /fx2 exch def 
+   cvi 7 not and /fy1 exch def 
+   cvi 7 not and /fx1 exch def
+   fx2 fx1 sub psize div ceiling cvi
+   /fwidth exch def
+   fy1 psize fy2                          %
+   {                                      %
+     fx1 exch moveto                      %
+     fwidth { FillChar show } repeat      %
+   } for                                  %
+} bind def
+
+%---------------------------------------------------------------------
+%  savePGL
+%---------------------------------------------------------------------
+/savePGL{
+   /saveObj save def
+}bind def
+
+%---------------------------------------------------------------------
+%  #copies newPage
+%---------------------------------------------------------------------
+/newPage{
+   /#copies exch def
+   showpage saveObj restore
+   /#copies 1 def
+}bind def
+
+%----------------------------------------------------------------------
+% x,y,npixels bmRow  % Bitmap row data, 1 row at a time...
+%----------------------------------------------------------------------
+/bmRow {
+  /bmPixels  exch def
+  /bmY       exch def
+  /bmX       exch def
+
+  currentpoint stroke moveto % save x,y stroke and moveto
+  gsave                      % save graphics state
+  1 setlinewidth             % linewidth
+  0 setlinecap               % but cap
+  [] 0 setdash               % solid style
+  bmX .5 add bmY .5 add moveto % move to start of row
+  %
+  %  Read & decompress  a whole row of pixel color data via RLE
+  %
+  currentfile rleFlag readhexstring pop 
+  0 get 1 eq 
+  { /cumBytes 0 def
+    { 
+      currentfile rleStr readhexstring pop 
+      dup 
+      0 get 1 add exch % count rleStr
+      1 get SCC        % count 
+      dup              % dup count
+      0 rlineto        % draw
+      currentpoint stroke moveto     
+      /cumBytes exch cumBytes add def 
+      cumBytes bmPixels ge { exit } if 
+    }loop 
+  }{ 
+    1 1 bmPixels
+    {
+      pop
+      currentfile bmStr readhexstring pop 
+      0 get SCC
+      1 0 rlineto
+      currentpoint stroke moveto     
+    }for
+  }ifelse 
+
+  grestore
+}bind def
+
+%----------------------------------------------------------------------
+% DPI PMAXX PMAXY PageHght TopMgn LftMgn LandFlag ColorModel initPGL
+%----------------------------------------------------------------------
+/initPGL {
+   %---Page Constants
+   /ColorModel exch def  /LandFlag exch def 
+   /LeftMgn exch def     /TopMgn exch def
+   /PageHeight exch def  /PY exch def       /PX exch def
+
+   %---Select/Set Color model
+   /ColorMap ColorChoices ColorModel get def   % default colors=b&w
+   
+   %---Save state & set output res
+   savePGL 
+   
+   %---Set output res scaling, dpi on stack(300?)
+   /dpiRes  exch def             % dots per inch
+   /dphiRes dpiRes 100 div def   % pots per 1/100 inches (hinches)
+   72 dpiRes div dup scale
+
+   %---Set coordinate origin, & dir
+   LandFlag 1 ne { 
+      % Portrait Setup
+      LeftMgn dphiRes mul PageHeight TopMgn sub dphiRes mul 
+   }{
+      % Landscape Setup
+      90 rotate LeftMgn dphiRes mul TopMgn dphiRes mul neg 
+   }ifelse
+   translate 1 -1 scale
+
+   %---Adjust font scale factor sizes, relative to 5000x5000
+   0 1 6 { dup FSX exch get 4999 PX div mul FSX 3 1 roll put } for
+   0 1 6 { dup FSY exch get 4999 PY div mul FSY 3 1 roll put } for
+
+   %---Set default graphics state
+   np 0 0 m
+   1  SLC
+   1  SLW
+   [] 0 SLS
+   1 1 1 1 SFX
+   0 SCF
+   <0000000000000000> SUF
+   10 setmiterlimit
+    0 setlinejoin 
+    1 setlinecap
+    gs  % save for clipping
+    xs 0 0 PX PY ClipR
+}bind def
+%%EndProlog
+%%Page: 1 1
+300 1943 1487 1100 302 100 0 0 initPGL
+0 SCF
+[] 0 SLS
+1 SLW
+<ffffffffffffffff> SUF
+1 SFC
+1 SFS
+1 SFC
+1 SFM
+0 0 1943 1487 ClipR
+0 0 1943 1487 ClipR
+xs 1 SLC
+[] 0 SLS
+1 SLW
+xs 0 SLC
+1 SLW
+xs 15 SLC
+90 652 897 652 Ln
+90 34 897 34 Ln
+90 653 897 653 Ln
+90 33 897 33 Ln
+89 653 897 653 Ln
+89 33 897 33 Ln
+88 653 897 653 Ln
+88 33 897 33 Ln
+88 654 897 654 Ln
+88 32 897 32 Ln
+90 652 90 644 Ln
+90 34 90 42 Ln
+103 652 103 644 Ln
+103 34 103 42 Ln
+105 667 99 667 Ln
+99 667 98 673 Ln
+98 673 99 672 Ln
+99 672 101 672 Ln
+101 672 103 672 Ln
+103 672 105 672 Ln
+105 672 107 673 Ln
+107 673 107 675 Ln
+107 675 107 677 Ln
+107 677 107 679 Ln
+107 679 105 681 Ln
+105 681 103 681 Ln
+103 681 101 681 Ln
+101 681 99 681 Ln
+99 681 98 679 Ln
+98 679 98 679 Ln
+115 652 115 644 Ln
+115 34 115 42 Ln
+128 652 128 644 Ln
+128 34 128 42 Ln
+141 652 141 644 Ln
+141 34 141 42 Ln
+130 670 15 Pix
+130 670 131 669 Ln
+131 669 132 668 Ln
+132 668 133 667 Ln
+133 667 136 667 Ln
+136 667 137 668 Ln
+137 668 138 669 Ln
+138 669 138 670 Ln
+138 670 138 671 Ln
+138 671 138 672 Ln
+138 672 136 674 Ln
+136 674 130 681 Ln
+130 681 139 681 Ln
+147 667 145 668 Ln
+145 668 143 670 Ln
+143 670 143 673 Ln
+143 673 143 675 Ln
+143 675 143 679 Ln
+143 679 145 681 Ln
+145 681 147 681 Ln
+147 681 148 681 Ln
+148 681 150 681 Ln
+150 681 151 679 Ln
+151 679 152 675 Ln
+152 675 152 673 Ln
+152 673 151 670 Ln
+151 670 150 668 Ln
+150 668 148 667 Ln
+148 667 147 667 Ln
+154 652 154 644 Ln
+154 34 154 42 Ln
+166 652 166 644 Ln
+166 34 166 42 Ln
+180 652 180 644 Ln
+180 34 180 42 Ln
+170 667 177 667 Ln
+177 667 173 672 Ln
+173 672 175 672 Ln
+175 672 176 673 Ln
+176 673 177 673 Ln
+177 673 177 675 Ln
+177 675 177 677 Ln
+177 677 177 679 Ln
+177 679 175 681 Ln
+175 681 174 681 Ln
+174 681 172 681 Ln
+172 681 170 681 Ln
+170 681 168 679 Ln
+168 679 168 679 Ln
+189 667 183 667 Ln
+183 667 182 673 Ln
+182 673 183 672 Ln
+183 672 185 672 Ln
+185 672 187 672 Ln
+187 672 189 672 Ln
+189 672 190 673 Ln
+190 673 191 675 Ln
+191 675 191 677 Ln
+191 677 190 679 Ln
+190 679 189 681 Ln
+189 681 187 681 Ln
+187 681 185 681 Ln
+185 681 183 681 Ln
+183 681 182 679 Ln
+182 679 182 679 Ln
+192 652 192 644 Ln
+192 34 192 42 Ln
+205 652 205 644 Ln
+205 34 205 42 Ln
+218 652 218 644 Ln
+218 34 218 42 Ln
+214 667 208 667 Ln
+208 667 207 673 Ln
+207 673 208 672 Ln
+208 672 210 672 Ln
+210 672 212 672 Ln
+212 672 214 672 Ln
+214 672 215 673 Ln
+215 673 216 675 Ln
+216 675 216 677 Ln
+216 677 215 679 Ln
+215 679 214 681 Ln
+214 681 212 681 Ln
+212 681 210 681 Ln
+210 681 208 681 Ln
+208 681 207 679 Ln
+207 679 207 679 Ln
+224 667 222 668 Ln
+222 668 220 670 Ln
+220 670 220 673 Ln
+220 673 220 675 Ln
+220 675 220 679 Ln
+220 679 222 681 Ln
+222 681 224 681 Ln
+224 681 225 681 Ln
+225 681 227 681 Ln
+227 681 228 679 Ln
+228 679 229 675 Ln
+229 675 229 673 Ln
+229 673 228 670 Ln
+228 670 227 668 Ln
+227 668 225 667 Ln
+225 667 224 667 Ln
+231 652 231 644 Ln
+231 34 231 42 Ln
+243 652 243 644 Ln
+243 34 243 42 Ln
+257 652 257 644 Ln
+257 34 257 42 Ln
+254 669 253 668 Ln
+253 668 251 667 Ln
+251 667 250 667 Ln
+250 667 248 668 Ln
+248 668 247 670 Ln
+247 670 245 673 Ln
+245 673 245 676 Ln
+245 676 247 679 Ln
+247 679 248 681 Ln
+248 681 250 681 Ln
+250 681 15 Pix
+250 681 252 681 Ln
+252 681 254 679 Ln
+254 679 254 677 Ln
+254 677 254 676 Ln
+254 676 254 674 Ln
+254 674 252 673 Ln
+252 673 250 672 Ln
+250 672 15 Pix
+250 672 248 673 Ln
+248 673 247 674 Ln
+247 674 245 676 Ln
+266 667 260 667 Ln
+260 667 258 673 Ln
+258 673 260 672 Ln
+260 672 262 672 Ln
+262 672 264 672 Ln
+264 672 266 672 Ln
+266 672 267 673 Ln
+267 673 267 675 Ln
+267 675 267 677 Ln
+267 677 267 679 Ln
+267 679 266 681 Ln
+266 681 264 681 Ln
+264 681 262 681 Ln
+262 681 260 681 Ln
+260 681 258 679 Ln
+258 679 258 679 Ln
+269 652 269 644 Ln
+269 34 269 42 Ln
+282 652 282 644 Ln
+282 34 282 42 Ln
+295 652 295 644 Ln
+295 34 295 42 Ln
+287 667 285 668 Ln
+285 668 284 669 Ln
+284 669 284 670 Ln
+284 670 285 672 Ln
+285 672 286 672 Ln
+286 672 289 673 Ln
+289 673 291 673 Ln
+291 673 292 675 Ln
+292 675 293 676 Ln
+293 676 293 679 Ln
+293 679 292 679 Ln
+292 679 291 681 Ln
+291 681 289 681 Ln
+289 681 287 681 Ln
+287 681 285 681 Ln
+285 681 284 679 Ln
+284 679 283 679 Ln
+283 679 283 676 Ln
+283 676 284 675 Ln
+284 675 285 673 Ln
+285 673 287 673 Ln
+287 673 290 672 Ln
+290 672 291 672 Ln
+291 672 292 670 Ln
+292 670 292 669 Ln
+292 669 291 668 Ln
+291 668 289 667 Ln
+289 667 287 667 Ln
+301 667 299 668 Ln
+299 668 297 670 Ln
+297 670 297 673 Ln
+297 673 297 675 Ln
+297 675 297 679 Ln
+297 679 299 681 Ln
+299 681 301 681 Ln
+301 681 302 681 Ln
+302 681 304 681 Ln
+304 681 305 679 Ln
+305 679 306 675 Ln
+306 675 306 673 Ln
+306 673 305 670 Ln
+305 670 304 668 Ln
+304 668 302 667 Ln
+302 667 301 667 Ln
+308 652 308 644 Ln
+308 34 308 42 Ln
+320 652 320 644 Ln
+320 34 320 42 Ln
+333 652 333 644 Ln
+333 34 333 42 Ln
+331 672 329 673 Ln
+329 673 329 675 Ln
+329 675 327 675 Ln
+327 675 326 675 Ln
+326 675 324 675 Ln
+324 675 322 673 Ln
+322 673 322 672 Ln
+322 672 322 671 Ln
+322 671 322 669 Ln
+322 669 324 668 Ln
+324 668 326 667 Ln
+326 667 327 667 Ln
+327 667 329 668 Ln
+329 668 329 669 Ln
+329 669 331 672 Ln
+331 672 331 675 Ln
+331 675 329 679 Ln
+329 679 329 681 Ln
+329 681 327 681 Ln
+327 681 326 681 Ln
+326 681 324 681 Ln
+324 681 322 679 Ln
+343 667 337 667 Ln
+337 667 335 673 Ln
+335 673 337 672 Ln
+337 672 339 672 Ln
+339 672 341 672 Ln
+341 672 343 672 Ln
+343 672 344 673 Ln
+344 673 344 675 Ln
+344 675 344 677 Ln
+344 677 344 679 Ln
+344 679 343 681 Ln
+343 681 341 681 Ln
+341 681 339 681 Ln
+339 681 337 681 Ln
+337 681 335 679 Ln
+335 679 335 679 Ln
+346 652 346 644 Ln
+346 34 346 42 Ln
+359 652 359 644 Ln
+359 34 359 42 Ln
+372 652 372 644 Ln
+372 34 372 42 Ln
+385 652 385 644 Ln
+385 34 385 42 Ln
+368 670 370 669 Ln
+370 669 372 667 Ln
+372 667 372 681 Ln
+382 670 383 669 Ln
+383 669 385 667 Ln
+385 667 385 681 Ln
+401 667 395 667 Ln
+395 667 394 673 Ln
+394 673 395 672 Ln
+395 672 397 672 Ln
+397 672 399 672 Ln
+399 672 400 672 Ln
+400 672 402 673 Ln
+402 673 402 675 Ln
+402 675 402 677 Ln
+402 677 402 679 Ln
+402 679 400 681 Ln
+400 681 399 681 Ln
+399 681 397 681 Ln
+397 681 395 681 Ln
+395 681 394 679 Ln
+394 679 394 679 Ln
+397 652 397 644 Ln
+397 34 397 42 Ln
+410 652 410 644 Ln
+410 34 410 42 Ln
+423 652 423 644 Ln
+423 34 423 42 Ln
+436 652 436 644 Ln
+436 34 436 42 Ln
+448 652 448 644 Ln
+448 34 448 42 Ln
+433 670 434 669 Ln
+434 669 436 667 Ln
+436 667 436 681 Ln
+450 667 444 676 Ln
+444 676 454 676 Ln
+450 667 450 681 Ln
+462 667 460 668 Ln
+460 668 458 670 Ln
+458 670 458 673 Ln
+458 673 458 675 Ln
+458 675 458 679 Ln
+458 679 460 681 Ln
+460 681 462 681 Ln
+462 681 463 681 Ln
+463 681 465 681 Ln
+465 681 466 679 Ln
+466 679 467 675 Ln
+467 675 467 673 Ln
+467 673 466 670 Ln
+466 670 465 668 Ln
+465 668 463 667 Ln
+463 667 462 667 Ln
+462 652 462 644 Ln
+462 34 462 42 Ln
+474 652 474 644 Ln
+474 34 474 42 Ln
+487 652 487 644 Ln
+487 34 487 42 Ln
+500 652 500 644 Ln
+500 34 500 42 Ln
+513 652 513 644 Ln
+513 34 513 42 Ln
+496 670 498 669 Ln
+498 669 500 667 Ln
+500 667 500 681 Ln
+517 669 515 668 Ln
+515 668 514 667 Ln
+514 667 513 667 Ln
+513 667 511 668 Ln
+511 668 510 670 Ln
+510 670 508 673 Ln
+508 673 508 676 Ln
+508 676 510 679 Ln
+510 679 511 681 Ln
+511 681 513 681 Ln
+513 681 514 681 Ln
+514 681 515 681 Ln
+515 681 517 679 Ln
+517 679 517 677 Ln
+517 677 517 676 Ln
+517 676 517 674 Ln
+517 674 515 673 Ln
+515 673 514 672 Ln
+514 672 513 672 Ln
+513 672 511 673 Ln
+511 673 510 674 Ln
+510 674 508 676 Ln
+529 667 523 667 Ln
+523 667 522 673 Ln
+522 673 523 672 Ln
+523 672 525 672 Ln
+525 672 527 672 Ln
+527 672 529 672 Ln
+529 672 531 673 Ln
+531 673 531 675 Ln
+531 675 531 677 Ln
+531 677 531 679 Ln
+531 679 529 681 Ln
+529 681 527 681 Ln
+527 681 525 681 Ln
+525 681 523 681 Ln
+523 681 522 679 Ln
+522 679 522 679 Ln
+525 652 525 644 Ln
+525 34 525 42 Ln
+538 652 538 644 Ln
+538 34 538 42 Ln
+551 652 551 644 Ln
+551 34 551 42 Ln
+564 652 564 644 Ln
+564 34 564 42 Ln
+577 652 577 644 Ln
+577 34 577 42 Ln
+561 670 562 669 Ln
+562 669 564 667 Ln
+564 667 564 681 Ln
+581 672 580 673 Ln
+580 673 579 675 Ln
+579 675 577 675 Ln
+577 675 576 675 Ln
+576 675 574 675 Ln
+574 675 573 673 Ln
+573 673 572 672 Ln
+572 672 572 671 Ln
+572 671 573 669 Ln
+573 669 574 668 Ln
+574 668 576 667 Ln
+576 667 577 667 Ln
+577 667 579 668 Ln
+579 668 580 669 Ln
+580 669 581 672 Ln
+581 672 581 675 Ln
+581 675 580 679 Ln
+580 679 579 681 Ln
+579 681 577 681 Ln
+577 681 575 681 Ln
+575 681 573 681 Ln
+573 681 573 679 Ln
+590 667 588 668 Ln
+588 668 586 670 Ln
+586 670 586 673 Ln
+586 673 586 675 Ln
+586 675 586 679 Ln
+586 679 588 681 Ln
+588 681 590 681 Ln
+590 681 591 681 Ln
+591 681 593 681 Ln
+593 681 594 679 Ln
+594 679 595 675 Ln
+595 675 595 673 Ln
+595 673 594 670 Ln
+594 670 593 668 Ln
+593 668 591 667 Ln
+591 667 590 667 Ln
+590 652 590 644 Ln
+590 34 590 42 Ln
+602 652 602 644 Ln
+602 34 602 42 Ln
+615 652 615 644 Ln
+615 34 615 42 Ln
+628 652 628 644 Ln
+628 34 628 42 Ln
+641 652 641 644 Ln
+641 34 641 42 Ln
+623 670 15 Pix
+623 670 625 669 Ln
+625 669 625 668 Ln
+625 668 626 667 Ln
+626 667 629 667 Ln
+629 667 630 668 Ln
+630 668 631 669 Ln
+631 669 631 670 Ln
+631 670 631 671 Ln
+631 671 631 672 Ln
+631 672 629 674 Ln
+629 674 623 681 Ln
+623 681 632 681 Ln
+638 670 640 669 Ln
+640 669 642 667 Ln
+642 667 642 681 Ln
+657 667 652 667 Ln
+652 667 650 673 Ln
+650 673 652 672 Ln
+652 672 654 672 Ln
+654 672 655 672 Ln
+655 672 657 672 Ln
+657 672 658 673 Ln
+658 673 659 675 Ln
+659 675 659 677 Ln
+659 677 658 679 Ln
+658 679 657 681 Ln
+657 681 655 681 Ln
+655 681 654 681 Ln
+654 681 652 681 Ln
+652 681 650 679 Ln
+650 679 650 679 Ln
+654 652 654 644 Ln
+654 34 654 42 Ln
+667 652 667 644 Ln
+667 34 667 42 Ln
+679 652 679 644 Ln
+679 34 679 42 Ln
+692 652 692 644 Ln
+692 34 692 42 Ln
+705 652 705 644 Ln
+705 34 705 42 Ln
+688 670 15 Pix
+688 670 688 669 Ln
+688 669 689 668 Ln
+689 668 690 667 Ln
+690 667 692 667 Ln
+692 667 694 668 Ln
+694 668 694 669 Ln
+694 669 696 670 Ln
+696 670 696 671 Ln
+696 671 694 672 Ln
+694 672 694 674 Ln
+694 674 687 681 Ln
+687 681 696 681 Ln
+707 667 700 676 Ln
+700 676 710 676 Ln
+707 667 707 681 Ln
+718 667 716 668 Ln
+716 668 715 670 Ln
+715 670 714 673 Ln
+714 673 714 675 Ln
+714 675 715 679 Ln
+715 679 716 681 Ln
+716 681 718 681 Ln
+718 681 719 681 Ln
+719 681 721 681 Ln
+721 681 723 679 Ln
+723 679 723 675 Ln
+723 675 723 673 Ln
+723 673 723 670 Ln
+723 670 721 668 Ln
+721 668 719 667 Ln
+719 667 718 667 Ln
+718 652 718 644 Ln
+718 34 718 42 Ln
+730 652 730 644 Ln
+730 34 730 42 Ln
+744 652 744 644 Ln
+744 34 744 42 Ln
+756 652 756 644 Ln
+756 34 756 42 Ln
+769 652 769 644 Ln
+769 34 769 42 Ln
+751 670 15 Pix
+751 670 752 669 Ln
+752 669 753 668 Ln
+753 668 754 667 Ln
+754 667 757 667 Ln
+757 667 758 668 Ln
+758 668 759 669 Ln
+759 669 759 670 Ln
+759 670 759 671 Ln
+759 671 759 672 Ln
+759 672 757 674 Ln
+757 674 751 681 Ln
+751 681 760 681 Ln
+773 669 772 668 Ln
+772 668 770 667 Ln
+770 667 769 667 Ln
+769 667 767 668 Ln
+767 668 766 670 Ln
+766 670 765 673 Ln
+765 673 765 676 Ln
+765 676 766 679 Ln
+766 679 767 681 Ln
+767 681 769 681 Ln
+769 681 15 Pix
+769 681 771 681 Ln
+771 681 773 679 Ln
+773 679 773 677 Ln
+773 677 773 676 Ln
+773 676 773 674 Ln
+773 674 771 673 Ln
+771 673 769 672 Ln
+769 672 15 Pix
+769 672 767 673 Ln
+767 673 766 674 Ln
+766 674 765 676 Ln
+786 667 780 667 Ln
+780 667 778 673 Ln
+778 673 780 672 Ln
+780 672 782 672 Ln
+782 672 783 672 Ln
+783 672 785 672 Ln
+785 672 786 673 Ln
+786 673 787 675 Ln
+787 675 787 677 Ln
+787 677 786 679 Ln
+786 679 785 681 Ln
+785 681 783 681 Ln
+783 681 782 681 Ln
+782 681 780 681 Ln
+780 681 778 679 Ln
+778 679 778 679 Ln
+782 652 782 644 Ln
+782 34 782 42 Ln
+795 652 795 644 Ln
+795 34 795 42 Ln
+807 652 807 644 Ln
+807 34 807 42 Ln
+820 652 820 644 Ln
+820 34 820 42 Ln
+833 652 833 644 Ln
+833 34 833 42 Ln
+816 670 15 Pix
+816 670 817 669 Ln
+817 669 817 668 Ln
+817 668 819 667 Ln
+819 667 820 667 Ln
+820 667 822 668 Ln
+822 668 822 669 Ln
+822 669 824 670 Ln
+824 670 824 671 Ln
+824 671 822 672 Ln
+822 672 822 674 Ln
+822 674 815 681 Ln
+815 681 824 681 Ln
+837 672 836 673 Ln
+836 673 835 675 Ln
+835 675 833 675 Ln
+833 675 832 675 Ln
+832 675 830 675 Ln
+830 675 829 673 Ln
+829 673 828 672 Ln
+828 672 828 671 Ln
+828 671 829 669 Ln
+829 669 830 668 Ln
+830 668 832 667 Ln
+832 667 833 667 Ln
+833 667 835 668 Ln
+835 668 836 669 Ln
+836 669 837 672 Ln
+837 672 837 675 Ln
+837 675 836 679 Ln
+836 679 835 681 Ln
+835 681 833 681 Ln
+833 681 832 681 Ln
+832 681 830 681 Ln
+830 681 829 679 Ln
+846 667 844 668 Ln
+844 668 843 670 Ln
+843 670 842 673 Ln
+842 673 842 675 Ln
+842 675 843 679 Ln
+843 679 844 681 Ln
+844 681 846 681 Ln
+846 681 847 681 Ln
+847 681 849 681 Ln
+849 681 851 679 Ln
+851 679 851 675 Ln
+851 675 851 673 Ln
+851 673 851 670 Ln
+851 670 849 668 Ln
+849 668 847 667 Ln
+847 667 846 667 Ln
+846 652 846 644 Ln
+846 34 846 42 Ln
+859 652 859 644 Ln
+859 34 859 42 Ln
+872 652 872 644 Ln
+872 34 872 42 Ln
+884 652 884 644 Ln
+884 34 884 42 Ln
+897 652 897 644 Ln
+897 34 897 42 Ln
+880 667 888 667 Ln
+888 667 884 672 Ln
+884 672 886 672 Ln
+886 672 887 673 Ln
+887 673 888 673 Ln
+888 673 888 675 Ln
+888 675 888 677 Ln
+888 677 888 679 Ln
+888 679 886 681 Ln
+886 681 884 681 Ln
+884 681 882 681 Ln
+882 681 880 681 Ln
+880 681 880 679 Ln
+880 679 879 679 Ln
+894 670 896 669 Ln
+896 669 897 667 Ln
+897 667 897 681 Ln
+914 667 908 667 Ln
+908 667 907 673 Ln
+907 673 908 672 Ln
+908 672 909 672 Ln
+909 672 911 672 Ln
+911 672 913 672 Ln
+913 672 914 673 Ln
+914 673 915 675 Ln
+915 675 915 677 Ln
+915 677 914 679 Ln
+914 679 913 681 Ln
+913 681 911 681 Ln
+911 681 909 681 Ln
+909 681 908 681 Ln
+908 681 907 679 Ln
+907 679 906 679 Ln
+90 652 90 34 Ln
+897 652 897 34 Ln
+90 652 90 34 Ln
+897 653 897 33 Ln
+89 652 89 34 Ln
+898 653 898 33 Ln
+88 651 88 34 Ln
+899 653 899 33 Ln
+88 650 88 34 Ln
+899 654 899 32 Ln
+90 652 97 652 Ln
+897 652 889 652 Ln
+63 663 63 665 Ln
+63 665 65 667 Ln
+65 667 69 667 Ln
+69 667 70 667 Ln
+70 667 74 667 Ln
+74 667 76 665 Ln
+76 665 76 663 Ln
+76 663 76 662 Ln
+76 662 76 660 Ln
+76 660 74 659 Ln
+74 659 70 658 Ln
+70 658 69 658 Ln
+69 658 65 659 Ln
+65 659 63 660 Ln
+63 660 63 662 Ln
+63 662 63 663 Ln
+74 653 76 653 Ln
+76 653 76 653 Ln
+76 653 76 652 Ln
+76 652 74 653 Ln
+63 643 63 645 Ln
+63 645 65 646 Ln
+65 646 69 647 Ln
+69 647 70 647 Ln
+70 647 74 646 Ln
+74 646 76 645 Ln
+76 645 76 643 Ln
+76 643 76 642 Ln
+76 642 76 640 Ln
+76 640 74 638 Ln
+74 638 70 638 Ln
+70 638 69 638 Ln
+69 638 65 638 Ln
+65 638 63 640 Ln
+63 640 63 642 Ln
+63 642 63 643 Ln
+90 575 97 575 Ln
+897 575 889 575 Ln
+63 586 63 588 Ln
+63 588 65 589 Ln
+65 589 69 590 Ln
+69 590 70 590 Ln
+70 590 74 589 Ln
+74 589 76 588 Ln
+76 588 76 586 Ln
+76 586 76 585 Ln
+76 585 76 583 Ln
+76 583 74 581 Ln
+74 581 70 581 Ln
+70 581 69 581 Ln
+69 581 65 581 Ln
+65 581 63 583 Ln
+63 583 63 585 Ln
+63 585 63 586 Ln
+74 576 76 576 Ln
+76 576 76 576 Ln
+76 576 76 575 Ln
+76 575 74 576 Ln
+65 568 64 566 Ln
+64 566 63 564 Ln
+63 564 76 564 Ln
+90 498 97 498 Ln
+897 498 889 498 Ln
+63 509 63 511 Ln
+63 511 65 512 Ln
+65 512 69 513 Ln
+69 513 70 513 Ln
+70 513 74 512 Ln
+74 512 76 511 Ln
+76 511 76 509 Ln
+76 509 76 507 Ln
+76 507 76 506 Ln
+76 506 74 504 Ln
+74 504 70 504 Ln
+70 504 69 504 Ln
+69 504 65 504 Ln
+65 504 63 506 Ln
+63 506 63 507 Ln
+63 507 63 509 Ln
+74 498 76 499 Ln
+76 499 76 498 Ln
+76 498 76 498 Ln
+76 498 74 498 Ln
+66 492 65 492 Ln
+65 492 64 491 Ln
+64 491 63 490 Ln
+63 490 63 489 Ln
+63 489 63 486 Ln
+63 486 63 485 Ln
+63 485 64 485 Ln
+64 485 65 484 Ln
+65 484 67 484 Ln
+67 484 67 485 Ln
+67 485 69 486 Ln
+69 486 76 492 Ln
+76 492 76 483 Ln
+90 420 97 420 Ln
+897 420 889 420 Ln
+63 432 63 434 Ln
+63 434 65 435 Ln
+65 435 69 435 Ln
+69 435 70 435 Ln
+70 435 74 435 Ln
+74 435 76 434 Ln
+76 434 76 432 Ln
+76 432 76 430 Ln
+76 430 76 428 Ln
+76 428 74 427 Ln
+74 427 70 426 Ln
+70 426 69 426 Ln
+69 426 65 427 Ln
+65 427 63 428 Ln
+63 428 63 430 Ln
+63 430 63 432 Ln
+74 421 76 422 Ln
+76 422 76 421 Ln
+76 421 76 420 Ln
+76 420 74 421 Ln
+63 414 63 406 Ln
+63 406 67 410 Ln
+67 410 67 408 Ln
+67 408 69 408 Ln
+69 408 69 406 Ln
+69 406 71 406 Ln
+71 406 72 406 Ln
+72 406 74 406 Ln
+74 406 76 408 Ln
+76 408 76 410 Ln
+76 410 76 412 Ln
+76 412 76 414 Ln
+76 414 74 414 Ln
+74 414 74 415 Ln
+90 343 97 343 Ln
+897 343 889 343 Ln
+63 354 63 356 Ln
+63 356 65 358 Ln
+65 358 69 358 Ln
+69 358 70 358 Ln
+70 358 74 358 Ln
+74 358 76 356 Ln
+76 356 76 354 Ln
+76 354 76 353 Ln
+76 353 76 351 Ln
+76 351 74 350 Ln
+74 350 70 349 Ln
+70 349 69 349 Ln
+69 349 65 350 Ln
+65 350 63 351 Ln
+63 351 63 353 Ln
+63 353 63 354 Ln
+74 344 76 344 Ln
+76 344 76 344 Ln
+76 344 76 343 Ln
+76 343 74 344 Ln
+63 331 71 338 Ln
+71 338 71 328 Ln
+63 331 76 331 Ln
+90 266 97 266 Ln
+897 266 889 266 Ln
+63 277 63 279 Ln
+63 279 65 280 Ln
+65 280 69 281 Ln
+69 281 70 281 Ln
+70 281 74 280 Ln
+74 280 76 279 Ln
+76 279 76 277 Ln
+76 277 76 276 Ln
+76 276 76 274 Ln
+76 274 74 272 Ln
+74 272 70 272 Ln
+70 272 69 272 Ln
+69 272 65 272 Ln
+65 272 63 274 Ln
+63 274 63 276 Ln
+63 276 63 277 Ln
+74 266 76 267 Ln
+76 267 76 266 Ln
+76 266 76 266 Ln
+76 266 74 266 Ln
+63 253 63 259 Ln
+63 259 69 260 Ln
+69 260 67 259 Ln
+67 259 67 257 Ln
+67 257 67 255 Ln
+67 255 67 253 Ln
+67 253 69 252 Ln
+69 252 71 251 Ln
+71 251 72 251 Ln
+72 251 74 252 Ln
+74 252 76 253 Ln
+76 253 76 255 Ln
+76 255 76 257 Ln
+76 257 76 259 Ln
+76 259 74 260 Ln
+74 260 74 260 Ln
+90 188 97 188 Ln
+897 188 889 188 Ln
+63 200 63 202 Ln
+63 202 65 204 Ln
+65 204 69 204 Ln
+69 204 70 204 Ln
+70 204 74 204 Ln
+74 204 76 202 Ln
+76 202 76 200 Ln
+76 200 76 198 Ln
+76 198 76 196 Ln
+76 196 74 195 Ln
+74 195 70 195 Ln
+70 195 69 195 Ln
+69 195 65 195 Ln
+65 195 63 196 Ln
+63 196 63 198 Ln
+63 198 63 200 Ln
+74 189 76 190 Ln
+76 190 76 189 Ln
+76 189 76 188 Ln
+76 188 74 189 Ln
+64 175 63 176 Ln
+63 176 63 178 Ln
+63 178 63 179 Ln
+63 179 63 181 Ln
+63 181 65 182 Ln
+65 182 69 182 Ln
+69 182 71 182 Ln
+71 182 74 182 Ln
+74 182 76 181 Ln
+76 181 76 179 Ln
+76 179 76 178 Ln
+76 178 76 176 Ln
+76 176 74 175 Ln
+74 175 72 174 Ln
+72 174 71 174 Ln
+71 174 69 175 Ln
+69 175 69 176 Ln
+69 176 67 178 Ln
+67 178 67 179 Ln
+67 179 69 181 Ln
+69 181 69 182 Ln
+69 182 71 182 Ln
+90 111 97 111 Ln
+897 111 889 111 Ln
+63 123 63 124 Ln
+63 124 65 126 Ln
+65 126 69 126 Ln
+69 126 70 126 Ln
+70 126 74 126 Ln
+74 126 76 124 Ln
+76 124 76 123 Ln
+76 123 76 121 Ln
+76 121 76 119 Ln
+76 119 74 118 Ln
+74 118 70 118 Ln
+70 118 69 118 Ln
+69 118 65 118 Ln
+65 118 63 119 Ln
+63 119 63 121 Ln
+63 121 63 123 Ln
+74 112 76 112 Ln
+76 112 76 112 Ln
+76 112 76 111 Ln
+76 111 74 112 Ln
+63 97 76 103 Ln
+63 106 63 97 Ln
+90 34 97 34 Ln
+897 34 889 34 Ln
+63 46 63 47 Ln
+63 47 65 49 Ln
+65 49 69 49 Ln
+69 49 70 49 Ln
+70 49 74 49 Ln
+74 49 76 47 Ln
+76 47 76 46 Ln
+76 46 76 44 Ln
+76 44 76 42 Ln
+76 42 74 40 Ln
+74 40 70 40 Ln
+70 40 69 40 Ln
+69 40 65 40 Ln
+65 40 63 42 Ln
+63 42 63 44 Ln
+63 44 63 46 Ln
+74 35 76 35 Ln
+76 35 76 35 Ln
+76 35 76 34 Ln
+76 34 74 35 Ln
+63 25 63 27 Ln
+63 27 64 29 Ln
+64 29 66 29 Ln
+66 29 67 27 Ln
+67 27 67 26 Ln
+67 26 69 23 Ln
+69 23 69 21 Ln
+69 21 70 20 Ln
+70 20 71 20 Ln
+71 20 74 20 Ln
+74 20 74 20 Ln
+74 20 76 21 Ln
+76 21 76 23 Ln
+76 23 76 25 Ln
+76 25 76 27 Ln
+76 27 74 29 Ln
+74 29 74 29 Ln
+74 29 71 29 Ln
+71 29 70 29 Ln
+70 29 69 27 Ln
+69 27 69 25 Ln
+69 25 67 22 Ln
+67 22 67 21 Ln
+67 21 66 20 Ln
+66 20 64 20 Ln
+64 20 63 21 Ln
+63 21 63 23 Ln
+63 23 63 25 Ln
+391 706 391 722 Ln
+391 706 397 706 Ln
+397 706 398 706 Ln
+398 706 400 708 Ln
+400 708 400 710 Ln
+400 710 402 712 Ln
+402 712 402 716 Ln
+402 716 400 718 Ln
+400 718 400 720 Ln
+400 720 398 721 Ln
+398 721 397 722 Ln
+397 722 391 722 Ln
+408 711 408 719 Ln
+408 719 408 721 Ln
+408 721 410 722 Ln
+410 722 412 722 Ln
+412 722 414 721 Ln
+414 721 416 719 Ln
+416 711 416 722 Ln
+422 711 422 722 Ln
+422 716 423 713 Ln
+423 713 425 712 Ln
+425 712 426 711 Ln
+426 711 428 711 Ln
+441 711 441 722 Ln
+441 713 440 712 Ln
+440 712 439 711 Ln
+439 711 437 711 Ln
+437 711 435 712 Ln
+435 712 433 713 Ln
+433 713 433 716 Ln
+433 716 433 717 Ln
+433 717 433 720 Ln
+433 720 435 721 Ln
+435 721 437 722 Ln
+437 722 439 722 Ln
+439 722 440 721 Ln
+440 721 441 720 Ln
+448 706 448 719 Ln
+448 719 450 721 Ln
+450 721 451 722 Ln
+451 722 452 722 Ln
+446 711 452 711 Ln
+457 706 458 706 Ln
+458 706 458 706 Ln
+458 706 458 705 Ln
+458 705 457 706 Ln
+458 711 458 722 Ln
+468 711 466 712 Ln
+466 712 464 713 Ln
+464 713 464 716 Ln
+464 716 464 717 Ln
+464 717 464 720 Ln
+464 720 466 721 Ln
+466 721 468 722 Ln
+468 722 470 722 Ln
+470 722 471 721 Ln
+471 721 473 720 Ln
+473 720 473 717 Ln
+473 717 473 716 Ln
+473 716 473 713 Ln
+473 713 471 712 Ln
+471 712 470 711 Ln
+470 711 468 711 Ln
+479 711 479 722 Ln
+479 714 482 712 Ln
+482 712 483 711 Ln
+483 711 486 711 Ln
+486 711 487 712 Ln
+487 712 488 714 Ln
+488 714 488 722 Ln
+511 711 510 712 Ln
+510 712 508 713 Ln
+508 713 507 716 Ln
+507 716 507 717 Ln
+507 717 508 720 Ln
+508 720 510 721 Ln
+510 721 511 722 Ln
+511 722 514 722 Ln
+514 722 515 721 Ln
+515 721 516 720 Ln
+516 720 517 717 Ln
+517 717 517 716 Ln
+517 716 516 713 Ln
+516 713 515 712 Ln
+515 712 514 711 Ln
+514 711 511 711 Ln
+527 706 526 706 Ln
+526 706 525 706 Ln
+525 706 523 709 Ln
+523 709 523 722 Ln
+521 711 527 711 Ln
+545 711 548 722 Ln
+551 711 548 722 Ln
+551 711 554 722 Ln
+557 711 554 722 Ln
+571 711 571 722 Ln
+571 713 569 712 Ln
+569 712 568 711 Ln
+568 711 566 711 Ln
+566 711 565 712 Ln
+565 712 563 713 Ln
+563 713 562 716 Ln
+562 716 562 717 Ln
+562 717 563 720 Ln
+563 720 565 721 Ln
+565 721 566 722 Ln
+566 722 568 722 Ln
+568 722 569 721 Ln
+569 721 571 720 Ln
+578 711 578 722 Ln
+578 716 579 713 Ln
+579 713 580 712 Ln
+580 712 582 711 Ln
+582 711 584 711 Ln
+596 713 595 712 Ln
+595 712 593 711 Ln
+593 711 590 711 Ln
+590 711 588 712 Ln
+588 712 588 713 Ln
+588 713 588 715 Ln
+588 715 590 716 Ln
+590 716 594 716 Ln
+594 716 595 717 Ln
+595 717 596 719 Ln
+596 719 596 720 Ln
+596 720 595 721 Ln
+595 721 593 722 Ln
+593 722 590 722 Ln
+590 722 588 721 Ln
+588 721 588 720 Ln
+24 648 40 648 Ln
+24 648 40 641 Ln
+24 635 40 641 Ln
+24 635 40 635 Ln
+29 620 40 620 Ln
+31 620 30 622 Ln
+30 622 29 623 Ln
+29 623 29 626 Ln
+29 626 30 627 Ln
+30 627 31 629 Ln
+31 629 33 629 Ln
+33 629 35 629 Ln
+35 629 37 629 Ln
+37 629 38 627 Ln
+38 627 40 626 Ln
+40 626 40 623 Ln
+40 623 38 622 Ln
+38 622 37 620 Ln
+29 613 40 613 Ln
+33 613 31 613 Ln
+31 613 30 611 Ln
+30 611 29 610 Ln
+29 610 29 607 Ln
+29 595 41 595 Ln
+41 595 44 595 Ln
+44 595 44 596 Ln
+44 596 45 597 Ln
+45 597 45 600 Ln
+45 600 44 601 Ln
+31 595 30 596 Ln
+30 596 29 597 Ln
+29 597 29 600 Ln
+29 600 30 601 Ln
+30 601 31 603 Ln
+31 603 33 603 Ln
+33 603 35 603 Ln
+35 603 37 603 Ln
+37 603 38 601 Ln
+38 601 40 600 Ln
+40 600 40 597 Ln
+40 597 38 596 Ln
+38 596 37 595 Ln
+24 588 24 587 Ln
+24 587 24 587 Ln
+24 587 23 587 Ln
+23 587 24 588 Ln
+29 587 40 587 Ln
+29 581 40 581 Ln
+32 581 30 578 Ln
+30 578 29 577 Ln
+29 577 29 574 Ln
+29 574 30 573 Ln
+30 573 32 572 Ln
+32 572 40 572 Ln
+29 557 40 557 Ln
+31 557 30 558 Ln
+30 558 29 560 Ln
+29 560 29 562 Ln
+29 562 30 564 Ln
+30 564 31 566 Ln
+31 566 33 566 Ln
+33 566 35 566 Ln
+35 566 37 566 Ln
+37 566 38 564 Ln
+38 564 40 562 Ln
+40 562 40 560 Ln
+40 560 38 558 Ln
+38 558 37 557 Ln
+24 550 40 550 Ln
+33 531 33 522 Ln
+33 522 32 522 Ln
+32 522 30 523 Ln
+30 523 30 523 Ln
+30 523 29 525 Ln
+29 525 29 527 Ln
+29 527 30 529 Ln
+30 529 31 531 Ln
+31 531 33 531 Ln
+33 531 35 531 Ln
+35 531 37 531 Ln
+37 531 38 529 Ln
+38 529 40 527 Ln
+40 527 40 525 Ln
+40 525 38 523 Ln
+38 523 37 522 Ln
+24 511 24 513 Ln
+24 513 24 514 Ln
+24 514 26 515 Ln
+26 515 40 515 Ln
+29 517 29 512 Ln
+24 502 24 504 Ln
+24 504 24 505 Ln
+24 505 26 506 Ln
+26 506 40 506 Ln
+29 508 29 503 Ln
+33 497 33 488 Ln
+33 488 32 488 Ln
+32 488 30 489 Ln
+30 489 30 490 Ln
+30 490 29 491 Ln
+29 491 29 494 Ln
+29 494 30 495 Ln
+30 495 31 497 Ln
+31 497 33 497 Ln
+33 497 35 497 Ln
+35 497 37 497 Ln
+37 497 38 495 Ln
+38 495 40 494 Ln
+40 494 40 491 Ln
+40 491 38 490 Ln
+38 490 37 488 Ln
+31 474 30 475 Ln
+30 475 29 476 Ln
+29 476 29 479 Ln
+29 479 30 480 Ln
+30 480 31 482 Ln
+31 482 33 483 Ln
+33 483 35 483 Ln
+35 483 37 482 Ln
+37 482 38 480 Ln
+38 480 40 479 Ln
+40 479 40 476 Ln
+40 476 38 475 Ln
+38 475 37 474 Ln
+24 467 37 467 Ln
+37 467 38 466 Ln
+38 466 40 464 Ln
+40 464 40 463 Ln
+29 469 29 464 Ln
+31 451 30 451 Ln
+30 451 29 453 Ln
+29 453 29 455 Ln
+29 455 30 458 Ln
+30 458 31 459 Ln
+31 459 33 458 Ln
+33 458 33 456 Ln
+33 456 34 452 Ln
+34 452 35 451 Ln
+35 451 37 451 Ln
+37 451 15 Pix
+37 451 38 451 Ln
+38 451 40 453 Ln
+40 453 40 455 Ln
+40 455 38 458 Ln
+38 458 37 459 Ln
+29 428 30 430 Ln
+30 430 31 432 Ln
+31 432 33 432 Ln
+33 432 35 432 Ln
+35 432 37 432 Ln
+37 432 38 430 Ln
+38 430 40 428 Ln
+40 428 40 426 Ln
+40 426 38 424 Ln
+38 424 37 423 Ln
+37 423 35 422 Ln
+35 422 33 422 Ln
+33 422 31 423 Ln
+31 423 30 424 Ln
+30 424 29 426 Ln
+29 426 29 428 Ln
+24 411 24 412 Ln
+24 412 24 414 Ln
+24 414 26 415 Ln
+26 415 40 415 Ln
+29 418 29 412 Ln
+24 393 35 393 Ln
+35 393 37 392 Ln
+37 392 38 391 Ln
+38 391 40 389 Ln
+40 389 40 387 Ln
+40 387 38 385 Ln
+38 385 37 383 Ln
+37 383 35 382 Ln
+35 382 24 382 Ln
+24 376 40 376 Ln
+24 376 40 365 Ln
+24 365 40 365 Ln
+29 346 45 346 Ln
+31 346 30 344 Ln
+30 344 29 342 Ln
+29 342 29 340 Ln
+29 340 30 338 Ln
+30 338 31 337 Ln
+31 337 33 336 Ln
+33 336 35 336 Ln
+35 336 37 337 Ln
+37 337 38 338 Ln
+38 338 40 340 Ln
+40 340 40 342 Ln
+40 342 38 344 Ln
+38 344 37 346 Ln
+33 330 33 322 Ln
+33 322 32 322 Ln
+32 322 30 323 Ln
+30 323 30 323 Ln
+30 323 29 325 Ln
+29 325 29 327 Ln
+29 327 30 328 Ln
+30 328 31 330 Ln
+31 330 33 330 Ln
+33 330 35 330 Ln
+35 330 37 330 Ln
+37 330 38 328 Ln
+38 328 40 327 Ln
+40 327 40 325 Ln
+40 325 38 323 Ln
+38 323 37 322 Ln
+29 307 40 307 Ln
+31 307 30 309 Ln
+30 309 29 310 Ln
+29 310 29 313 Ln
+29 313 30 314 Ln
+30 314 31 316 Ln
+31 316 33 317 Ln
+33 317 35 317 Ln
+35 317 37 316 Ln
+37 316 38 314 Ln
+38 314 40 313 Ln
+40 313 40 310 Ln
+40 310 38 309 Ln
+38 309 37 307 Ln
+31 292 30 293 Ln
+30 293 29 295 Ln
+29 295 29 297 Ln
+29 297 30 299 Ln
+30 299 31 301 Ln
+31 301 33 301 Ln
+33 301 35 301 Ln
+35 301 37 301 Ln
+37 301 38 299 Ln
+38 299 40 297 Ln
+40 297 40 295 Ln
+40 295 38 293 Ln
+38 293 37 292 Ln
+33 287 33 278 Ln
+33 278 32 278 Ln
+32 278 30 279 Ln
+30 279 30 279 Ln
+30 279 29 280 Ln
+29 280 29 283 Ln
+29 283 30 284 Ln
+30 284 31 286 Ln
+31 286 33 287 Ln
+33 287 35 287 Ln
+35 287 37 286 Ln
+37 286 38 284 Ln
+38 284 40 283 Ln
+40 283 40 280 Ln
+40 280 38 279 Ln
+38 279 37 278 Ln
+24 272 40 272 Ln
+29 264 37 272 Ln
+33 268 40 264 Ln
+33 258 33 250 Ln
+33 250 32 250 Ln
+32 250 30 251 Ln
+30 251 30 251 Ln
+30 251 29 253 Ln
+29 253 29 255 Ln
+29 255 30 256 Ln
+30 256 31 258 Ln
+31 258 33 258 Ln
+33 258 35 258 Ln
+35 258 37 258 Ln
+37 258 38 256 Ln
+38 256 40 255 Ln
+40 255 40 253 Ln
+40 253 38 251 Ln
+38 251 37 250 Ln
+33 245 33 235 Ln
+33 235 32 235 Ln
+32 235 30 236 Ln
+30 236 30 237 Ln
+30 237 29 238 Ln
+29 238 29 241 Ln
+29 241 30 242 Ln
+30 242 31 244 Ln
+31 244 33 245 Ln
+33 245 35 245 Ln
+35 245 37 244 Ln
+37 244 38 242 Ln
+38 242 40 241 Ln
+40 241 40 238 Ln
+40 238 38 237 Ln
+38 237 37 235 Ln
+29 229 45 229 Ln
+31 229 30 227 Ln
+30 227 29 226 Ln
+29 226 29 224 Ln
+29 224 30 222 Ln
+30 222 31 221 Ln
+31 221 33 221 Ln
+33 221 35 221 Ln
+35 221 37 221 Ln
+37 221 38 222 Ln
+38 222 40 224 Ln
+40 224 40 226 Ln
+40 226 38 227 Ln
+38 227 37 229 Ln
+24 215 24 214 Ln
+24 214 24 214 Ln
+24 214 23 214 Ln
+23 214 24 215 Ln
+29 214 40 214 Ln
+29 208 40 208 Ln
+32 208 30 205 Ln
+30 205 29 204 Ln
+29 204 29 202 Ln
+29 202 30 200 Ln
+30 200 32 199 Ln
+32 199 40 199 Ln
+29 184 41 184 Ln
+41 184 44 184 Ln
+44 184 44 185 Ln
+44 185 45 186 Ln
+45 186 45 189 Ln
+45 189 44 190 Ln
+31 184 30 185 Ln
+30 185 29 186 Ln
+29 186 29 189 Ln
+29 189 30 190 Ln
+30 190 31 192 Ln
+31 192 33 193 Ln
+33 193 35 193 Ln
+35 193 37 192 Ln
+37 192 38 190 Ln
+38 190 40 189 Ln
+40 189 40 186 Ln
+40 186 38 185 Ln
+38 185 37 184 Ln
+29 161 30 162 Ln
+30 162 31 164 Ln
+31 164 33 165 Ln
+33 165 35 165 Ln
+35 165 37 164 Ln
+37 164 38 162 Ln
+38 162 40 161 Ln
+40 161 40 159 Ln
+40 159 38 157 Ln
+38 157 37 155 Ln
+37 155 35 155 Ln
+35 155 33 155 Ln
+33 155 31 155 Ln
+31 155 30 157 Ln
+30 157 29 159 Ln
+29 159 29 161 Ln
+29 149 45 149 Ln
+31 149 30 147 Ln
+30 147 29 145 Ln
+29 145 29 144 Ln
+29 144 30 142 Ln
+30 142 31 140 Ln
+31 140 33 140 Ln
+33 140 35 140 Ln
+35 140 37 140 Ln
+37 140 38 142 Ln
+38 142 40 144 Ln
+40 144 40 145 Ln
+40 145 38 147 Ln
+38 147 37 149 Ln
+33 134 33 125 Ln
+33 125 32 125 Ln
+32 125 30 126 Ln
+30 126 30 126 Ln
+30 126 29 128 Ln
+29 128 29 130 Ln
+29 130 30 132 Ln
+30 132 31 134 Ln
+31 134 33 134 Ln
+33 134 35 134 Ln
+35 134 37 134 Ln
+37 134 38 132 Ln
+38 132 40 130 Ln
+40 130 40 128 Ln
+40 128 38 126 Ln
+38 126 37 125 Ln
+29 119 40 119 Ln
+33 119 31 118 Ln
+31 118 30 117 Ln
+30 117 29 116 Ln
+29 116 29 113 Ln
+29 101 40 101 Ln
+31 101 30 102 Ln
+30 102 29 103 Ln
+29 103 29 106 Ln
+29 106 30 107 Ln
+30 107 31 109 Ln
+31 109 33 109 Ln
+33 109 35 109 Ln
+35 109 37 109 Ln
+37 109 38 107 Ln
+38 107 40 106 Ln
+40 106 40 103 Ln
+40 103 38 102 Ln
+38 102 37 101 Ln
+24 93 37 93 Ln
+37 93 38 92 Ln
+38 92 40 90 Ln
+40 90 40 89 Ln
+29 95 29 90 Ln
+24 84 24 83 Ln
+24 83 24 83 Ln
+24 83 23 83 Ln
+23 83 24 84 Ln
+29 83 40 83 Ln
+29 73 30 75 Ln
+30 75 31 77 Ln
+31 77 33 77 Ln
+33 77 35 77 Ln
+35 77 37 77 Ln
+37 77 38 75 Ln
+38 75 40 73 Ln
+40 73 40 72 Ln
+40 72 38 70 Ln
+38 70 37 68 Ln
+37 68 35 68 Ln
+35 68 33 68 Ln
+33 68 31 68 Ln
+31 68 30 70 Ln
+30 70 29 72 Ln
+29 72 29 73 Ln
+29 62 40 62 Ln
+32 62 30 59 Ln
+30 59 29 58 Ln
+29 58 29 56 Ln
+29 56 30 54 Ln
+30 54 32 53 Ln
+32 53 40 53 Ln
+31 38 30 39 Ln
+30 39 29 42 Ln
+29 42 29 44 Ln
+29 44 30 46 Ln
+30 46 31 47 Ln
+31 47 33 46 Ln
+33 46 33 44 Ln
+33 44 34 40 Ln
+34 40 35 39 Ln
+35 39 37 38 Ln
+37 38 15 Pix
+37 38 38 39 Ln
+38 39 40 42 Ln
+40 42 40 44 Ln
+40 44 38 46 Ln
+38 46 37 47 Ln
+xs 10 SLC
+1 SLW
+92 147 10 Pix
+92 147 93 147 Ln
+101 147 10 Pix
+111 147 10 Pix
+120 146 10 Pix
+130 146 10 Pix
+139 146 10 Pix
+148 146 10 Pix
+157 147 10 Pix
+166 147 10 Pix
+176 147 10 Pix
+186 147 10 Pix
+194 148 10 Pix
+204 148 10 Pix
+212 149 10 Pix
+222 150 10 Pix
+232 151 10 Pix
+241 152 10 Pix
+250 153 10 Pix
+259 153 10 Pix
+268 155 10 Pix
+278 155 10 Pix
+287 157 10 Pix
+297 159 10 Pix
+305 159 10 Pix
+315 161 10 Pix
+324 163 10 Pix
+333 164 10 Pix
+343 166 10 Pix
+352 167 10 Pix
+361 169 10 Pix
+370 171 10 Pix
+379 173 10 Pix
+389 175 10 Pix
+398 177 10 Pix
+408 179 10 Pix
+416 181 10 Pix
+426 184 10 Pix
+435 186 10 Pix
+444 188 10 Pix
+454 191 10 Pix
+463 193 10 Pix
+472 196 10 Pix
+481 198 10 Pix
+491 202 10 Pix
+500 204 10 Pix
+509 207 10 Pix
+518 210 10 Pix
+527 213 10 Pix
+537 216 10 Pix
+546 219 10 Pix
+556 221 10 Pix
+565 225 10 Pix
+574 228 10 Pix
+583 231 10 Pix
+592 234 10 Pix
+602 237 10 Pix
+611 241 10 Pix
+620 244 10 Pix
+629 247 10 Pix
+638 251 10 Pix
+648 254 10 Pix
+657 258 10 Pix
+667 262 10 Pix
+675 265 10 Pix
+685 268 10 Pix
+694 272 10 Pix
+703 276 10 Pix
+713 279 10 Pix
+722 283 10 Pix
+731 286 10 Pix
+740 290 10 Pix
+749 294 10 Pix
+759 297 10 Pix
+768 301 10 Pix
+778 305 10 Pix
+786 309 10 Pix
+796 313 10 Pix
+805 317 10 Pix
+815 320 10 Pix
+824 324 10 Pix
+833 328 10 Pix
+842 332 10 Pix
+851 336 10 Pix
+861 339 10 Pix
+870 343 10 Pix
+879 347 10 Pix
+889 351 10 Pix
+833 328 10 Pix
+xs 11 SLC
+92 617 11 Pix
+92 617 95 612 Ln
+95 612 97 607 Ln
+97 607 11 Pix
+97 607 100 601 Ln
+100 601 11 Pix
+100 601 105 591 Ln
+105 591 11 Pix
+105 591 108 585 Ln
+108 585 110 579 Ln
+110 579 115 567 Ln
+115 567 120 555 Ln
+120 555 11 Pix
+120 555 131 529 Ln
+131 529 151 471 Ln
+151 471 11 Pix
+151 471 154 464 Ln
+154 464 180 389 Ln
+180 389 182 381 Ln
+182 381 11 Pix
+182 381 192 351 Ln
+192 351 212 295 Ln
+212 295 11 Pix
+212 295 216 288 Ln
+216 288 228 257 Ln
+228 257 238 235 Ln
+238 235 243 224 Ln
+243 224 11 Pix
+243 224 274 173 Ln
+274 173 11 Pix
+274 173 300 144 Ln
+300 144 305 139 Ln
+305 139 11 Pix
+305 139 335 120 Ln
+335 120 11 Pix
+335 120 366 112 Ln
+366 112 397 111 Ln
+397 111 11 Pix
+397 111 428 115 Ln
+428 115 459 122 Ln
+459 122 477 126 Ln
+477 126 485 128 Ln
+485 128 489 130 Ln
+489 130 520 140 Ln
+520 140 11 Pix
+520 140 551 150 Ln
+551 150 11 Pix
+551 150 569 157 Ln
+569 157 582 162 Ln
+582 162 11 Pix
+582 162 613 173 Ln
+613 173 626 178 Ln
+626 178 643 185 Ln
+643 185 705 210 Ln
+705 210 11 Pix
+705 210 736 222 Ln
+736 222 11 Pix
+736 222 828 260 Ln
+828 260 11 Pix
+828 260 889 286 Ln
+889 286 897 289 Ln
+xs 15 SLC
+503 328 503 343 Ln
+503 328 508 328 Ln
+508 328 510 328 Ln
+510 328 512 330 Ln
+512 330 512 331 Ln
+512 331 514 334 Ln
+514 334 514 337 Ln
+514 337 512 339 Ln
+512 339 512 340 Ln
+512 340 510 342 Ln
+510 342 508 343 Ln
+508 343 503 343 Ln
+522 332 520 334 Ln
+520 334 519 335 Ln
+519 335 518 337 Ln
+518 337 518 339 Ln
+518 339 519 340 Ln
+519 340 520 342 Ln
+520 342 522 343 Ln
+522 343 524 343 Ln
+524 343 525 342 Ln
+525 342 527 340 Ln
+527 340 528 339 Ln
+528 339 528 337 Ln
+528 337 527 335 Ln
+527 335 525 334 Ln
+525 334 524 332 Ln
+524 332 522 332 Ln
+534 328 534 340 Ln
+534 340 535 342 Ln
+535 342 536 343 Ln
+536 343 537 343 Ln
+532 332 537 332 Ln
+544 328 544 340 Ln
+544 340 544 342 Ln
+544 342 546 343 Ln
+546 343 548 343 Ln
+542 332 547 332 Ln
+552 337 561 337 Ln
+561 337 561 336 Ln
+561 336 560 334 Ln
+560 334 560 334 Ln
+560 334 558 332 Ln
+558 332 556 332 Ln
+556 332 554 334 Ln
+554 334 552 335 Ln
+552 335 552 337 Ln
+552 337 552 339 Ln
+552 339 552 340 Ln
+552 340 554 342 Ln
+554 342 556 343 Ln
+556 343 558 343 Ln
+558 343 560 342 Ln
+560 342 561 340 Ln
+575 328 575 343 Ln
+575 335 573 334 Ln
+573 334 571 332 Ln
+571 332 569 332 Ln
+569 332 568 334 Ln
+568 334 566 335 Ln
+566 335 566 337 Ln
+566 337 566 339 Ln
+566 339 566 340 Ln
+566 340 568 342 Ln
+568 342 569 343 Ln
+569 343 571 343 Ln
+571 343 573 342 Ln
+573 342 575 340 Ln
+582 332 581 334 Ln
+581 334 582 334 Ln
+582 334 583 334 Ln
+583 334 582 332 Ln
+582 342 581 342 Ln
+581 342 582 343 Ln
+582 343 583 342 Ln
+583 342 582 342 Ln
+606 328 604 328 Ln
+604 328 602 330 Ln
+602 330 602 331 Ln
+602 331 601 334 Ln
+601 334 601 337 Ln
+601 337 602 339 Ln
+602 339 602 340 Ln
+602 340 604 342 Ln
+604 342 606 343 Ln
+606 343 608 343 Ln
+608 343 609 342 Ln
+609 342 611 340 Ln
+611 340 612 339 Ln
+612 339 612 337 Ln
+612 337 612 334 Ln
+612 334 612 331 Ln
+612 331 611 330 Ln
+611 330 609 328 Ln
+609 328 608 328 Ln
+608 328 606 328 Ln
+619 332 619 343 Ln
+619 337 619 335 Ln
+619 335 621 334 Ln
+621 334 623 332 Ln
+623 332 625 332 Ln
+628 328 629 328 Ln
+629 328 629 328 Ln
+629 328 629 327 Ln
+629 327 628 328 Ln
+629 332 629 343 Ln
+643 332 643 344 Ln
+643 344 643 346 Ln
+643 346 642 347 Ln
+642 347 640 348 Ln
+640 348 638 348 Ln
+638 348 636 347 Ln
+643 335 642 334 Ln
+642 334 640 332 Ln
+640 332 638 332 Ln
+638 332 636 334 Ln
+636 334 635 335 Ln
+635 335 634 337 Ln
+634 337 634 339 Ln
+634 339 635 340 Ln
+635 340 636 342 Ln
+636 342 638 343 Ln
+638 343 640 343 Ln
+640 343 642 342 Ln
+642 342 643 340 Ln
+650 328 650 328 Ln
+650 328 651 328 Ln
+651 328 650 327 Ln
+650 327 650 328 Ln
+650 332 650 343 Ln
+657 332 657 343 Ln
+657 336 659 334 Ln
+659 334 660 332 Ln
+660 332 663 332 Ln
+663 332 664 334 Ln
+664 334 665 336 Ln
+665 336 665 343 Ln
+679 332 679 343 Ln
+679 335 678 334 Ln
+678 334 677 332 Ln
+677 332 674 332 Ln
+674 332 673 334 Ln
+673 334 671 335 Ln
+671 335 671 337 Ln
+671 337 671 339 Ln
+671 339 671 340 Ln
+671 340 673 342 Ln
+673 342 674 343 Ln
+674 343 677 343 Ln
+677 343 678 342 Ln
+678 342 679 340 Ln
+686 328 686 343 Ln
+705 332 705 343 Ln
+705 336 707 334 Ln
+707 334 709 332 Ln
+709 332 711 332 Ln
+711 332 713 334 Ln
+713 334 713 336 Ln
+713 336 713 343 Ln
+713 336 715 334 Ln
+715 334 717 332 Ln
+717 332 719 332 Ln
+719 332 721 334 Ln
+721 334 721 336 Ln
+721 336 721 343 Ln
+730 332 729 334 Ln
+729 334 728 335 Ln
+728 335 727 337 Ln
+727 337 727 339 Ln
+727 339 728 340 Ln
+728 340 729 342 Ln
+729 342 730 343 Ln
+730 343 733 343 Ln
+733 343 734 342 Ln
+734 342 736 340 Ln
+736 340 737 339 Ln
+737 339 737 337 Ln
+737 337 736 335 Ln
+736 335 734 334 Ln
+734 334 733 332 Ln
+733 332 730 332 Ln
+751 328 751 343 Ln
+751 335 749 334 Ln
+749 334 748 332 Ln
+748 332 746 332 Ln
+746 332 744 334 Ln
+744 334 742 335 Ln
+742 335 742 337 Ln
+742 337 742 339 Ln
+742 339 742 340 Ln
+742 340 744 342 Ln
+744 342 746 343 Ln
+746 343 748 343 Ln
+748 343 749 342 Ln
+749 342 751 340 Ln
+757 337 765 337 Ln
+765 337 765 336 Ln
+765 336 765 334 Ln
+765 334 764 334 Ln
+764 334 763 332 Ln
+763 332 760 332 Ln
+760 332 759 334 Ln
+759 334 757 335 Ln
+757 335 757 337 Ln
+757 337 757 339 Ln
+757 339 757 340 Ln
+757 340 759 342 Ln
+759 342 760 343 Ln
+760 343 763 343 Ln
+763 343 764 342 Ln
+764 342 765 340 Ln
+771 328 771 343 Ln
+182 482 182 498 Ln
+182 482 189 498 Ln
+194 482 189 498 Ln
+194 482 194 498 Ln
+203 487 202 488 Ln
+202 488 201 490 Ln
+201 490 200 492 Ln
+200 492 200 494 Ln
+200 494 201 495 Ln
+201 495 202 497 Ln
+202 497 203 498 Ln
+203 498 206 498 Ln
+206 498 207 497 Ln
+207 497 209 495 Ln
+209 495 209 494 Ln
+209 494 209 492 Ln
+209 492 209 490 Ln
+209 490 207 488 Ln
+207 488 206 487 Ln
+206 487 203 487 Ln
+223 482 223 498 Ln
+223 490 222 488 Ln
+222 488 220 487 Ln
+220 487 218 487 Ln
+218 487 216 488 Ln
+216 488 215 490 Ln
+215 490 214 492 Ln
+214 492 214 494 Ln
+214 494 215 495 Ln
+215 495 216 497 Ln
+216 497 218 498 Ln
+218 498 220 498 Ln
+220 498 222 497 Ln
+222 497 223 495 Ln
+230 492 238 492 Ln
+238 492 238 490 Ln
+238 490 237 488 Ln
+237 488 237 488 Ln
+237 488 235 487 Ln
+235 487 233 487 Ln
+233 487 232 488 Ln
+232 488 230 490 Ln
+230 490 230 492 Ln
+230 492 230 494 Ln
+230 494 230 495 Ln
+230 495 232 497 Ln
+232 497 233 498 Ln
+233 498 235 498 Ln
+235 498 237 497 Ln
+237 497 238 495 Ln
+243 482 243 498 Ln
+262 487 265 498 Ln
+268 487 265 498 Ln
+268 487 271 498 Ln
+274 487 271 498 Ln
+280 482 280 483 Ln
+280 483 281 482 Ln
+281 482 280 481 Ln
+280 481 280 482 Ln
+280 487 280 498 Ln
+287 482 287 495 Ln
+287 495 288 497 Ln
+288 497 289 498 Ln
+289 498 291 498 Ln
+285 487 290 487 Ln
+296 482 296 498 Ln
+296 490 298 488 Ln
+298 488 300 487 Ln
+300 487 302 487 Ln
+302 487 303 488 Ln
+303 488 304 490 Ln
+304 490 304 498 Ln
+322 482 323 483 Ln
+323 483 324 482 Ln
+324 482 323 481 Ln
+323 481 322 482 Ln
+323 487 323 498 Ln
+329 487 329 498 Ln
+329 490 332 488 Ln
+332 488 333 487 Ln
+333 487 335 487 Ln
+335 487 337 488 Ln
+337 488 337 490 Ln
+337 490 337 498 Ln
+345 482 345 495 Ln
+345 495 346 497 Ln
+346 497 347 498 Ln
+347 498 349 498 Ln
+343 487 348 487 Ln
+353 492 362 492 Ln
+362 492 362 490 Ln
+362 490 361 488 Ln
+361 488 360 488 Ln
+360 488 359 487 Ln
+359 487 356 487 Ln
+356 487 355 488 Ln
+355 488 354 490 Ln
+354 490 353 492 Ln
+353 492 353 494 Ln
+353 494 354 495 Ln
+354 495 355 497 Ln
+355 497 356 498 Ln
+356 498 359 498 Ln
+359 498 360 497 Ln
+360 497 362 495 Ln
+368 487 368 498 Ln
+368 492 368 490 Ln
+368 490 370 488 Ln
+370 488 372 487 Ln
+372 487 374 487 Ln
+386 487 386 498 Ln
+386 490 385 488 Ln
+385 488 383 487 Ln
+383 487 381 487 Ln
+381 487 379 488 Ln
+379 488 378 490 Ln
+378 490 377 492 Ln
+377 492 377 494 Ln
+377 494 378 495 Ln
+378 495 379 497 Ln
+379 497 381 498 Ln
+381 498 383 498 Ln
+383 498 385 497 Ln
+385 497 386 495 Ln
+400 490 399 488 Ln
+399 488 398 487 Ln
+398 487 395 487 Ln
+395 487 394 488 Ln
+394 488 393 490 Ln
+393 490 392 492 Ln
+392 492 392 494 Ln
+392 494 393 495 Ln
+393 495 394 497 Ln
+394 497 395 498 Ln
+395 498 398 498 Ln
+398 498 399 497 Ln
+399 497 400 495 Ln
+408 482 408 495 Ln
+408 495 408 497 Ln
+408 497 409 498 Ln
+409 498 411 498 Ln
+405 487 410 487 Ln
+416 482 416 483 Ln
+416 483 417 482 Ln
+417 482 416 481 Ln
+416 481 416 482 Ln
+416 487 416 498 Ln
+425 487 424 488 Ln
+424 488 423 490 Ln
+423 490 422 492 Ln
+422 492 422 494 Ln
+422 494 423 495 Ln
+423 495 424 497 Ln
+424 497 425 498 Ln
+425 498 428 498 Ln
+428 498 429 497 Ln
+429 497 431 495 Ln
+431 495 431 494 Ln
+431 494 431 492 Ln
+431 492 431 490 Ln
+431 490 429 488 Ln
+429 488 428 487 Ln
+428 487 425 487 Ln
+437 487 437 498 Ln
+437 490 440 488 Ln
+440 488 441 487 Ln
+441 487 443 487 Ln
+443 487 445 488 Ln
+445 488 445 490 Ln
+445 490 445 498 Ln
+466 482 466 495 Ln
+466 495 466 497 Ln
+466 497 467 498 Ln
+467 498 469 498 Ln
+463 487 468 487 Ln
+474 492 483 492 Ln
+483 492 483 490 Ln
+483 490 482 488 Ln
+482 488 481 488 Ln
+481 488 479 487 Ln
+479 487 477 487 Ln
+477 487 475 488 Ln
+475 488 474 490 Ln
+474 490 474 492 Ln
+474 492 474 494 Ln
+474 494 474 495 Ln
+474 495 475 497 Ln
+475 497 477 498 Ln
+477 498 479 498 Ln
+479 498 481 497 Ln
+481 497 483 495 Ln
+488 487 488 498 Ln
+488 492 489 490 Ln
+489 490 491 488 Ln
+491 488 492 487 Ln
+492 487 494 487 Ln
+498 487 498 498 Ln
+498 490 501 488 Ln
+501 488 502 487 Ln
+502 487 505 487 Ln
+505 487 506 488 Ln
+506 488 506 490 Ln
+506 490 506 498 Ln
+506 490 509 488 Ln
+509 488 510 487 Ln
+510 487 513 487 Ln
+513 487 514 488 Ln
+514 488 515 490 Ln
+515 490 515 498 Ln
+1 newPage
+%%Trailer
+%!END

@@ -1,0 +1,182 @@
+-----------------------------------------------------------------------------------
+       log:  /home/langche/papers/Gary/causal/WP/test/replication.log
+  log type:  text
+ opened on:   3 Jun 2003, 20:16:21
+
+. 
+. /* table 3, model A8 */
+. 
+. logistic pbs2s3 wartype logcost wardur factnum factnum2 trnsfcap untype4 treaty d
+> evelop exp decade,robust cluster(cluster)
+
+Logistic regression                               Number of obs   =        122
+                                                  Wald chi2(11)   =      41.47
+                                                  Prob > chi2     =     0.0000
+Log pseudo-likelihood = -45.648672                Pseudo R2       =     0.4234
+
+                          (standard errors adjusted for clustering on cluster)
+------------------------------------------------------------------------------
+             |               Robust
+      pbs2s3 | Odds Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     wartype |    .175169   .1066165    -2.86   0.004     .0531342    .5774845
+     logcost |   .6409204   .0804494    -3.54   0.000     .5011409    .8196876
+      wardur |   1.006406   .0056767     1.13   0.258     .9953414    1.017594
+     factnum |   .2839568    .199722    -1.79   0.073     .0715412    1.127062
+    factnum2 |   1.063611   .0695978     0.94   0.346     .9355868    1.209154
+    trnsfcap |   1.004102   .0015905     2.58   0.010     1.000989    1.007224
+     untype4 |   22.99287   25.08811     2.87   0.004     2.709104    195.1465
+      treaty |   8.367608   6.871941     2.59   0.010       1.6732     41.8461
+     develop |    1.00079   .0004278     1.85   0.065     .9999523    1.001629
+         exp |    .002439   .0074913    -1.96   0.050     5.93e-06    1.003837
+      decade |   .7417257   .1254109    -1.77   0.077     .5325032    1.033152
+------------------------------------------------------------------------------
+
+. 
+. gen un2=un2cint 
+
+.  
+. label var un2 "un2cint" 
+
+. label var develop "electric. cons."    
+
+. 
+. keep pbs2s3 wartype logcost wardur factnum factnum2 trnsfcap develop exp decade t
+> reaty un2 untype4 cluster
+
+. 
+. /* wp.dat: write out Y x1-x9 treaty un_table2A un_table3A8 cluster, excluding the
+>  md's */
+. 
+. keep if trnsfcap!=. & logcost!=.
+(2 observations deleted)
+
+. outfile pbs2s3 wartype logcost wardur factnum factnum2 trnsfcap develop exp decad
+> e treaty un2 untype4 using wp.dat, replace wide
+
+. 
+. keep cluster
+
+. save cluster,replace
+file cluster.dta saved
+
+. clear
+
+. 
+. infile y x1-x10 un1 un using wp.dat
+(122 observations read)
+
+. merge using cluster
+
+. drop _merge
+
+. 
+. save wpx,replace
+file wpx.dta saved
+
+. 
+. estsimp logit y x1-x10 un, antisim robust cluster(cluster)
+
+Iteration 0:   log pseudo-likelihood = -79.172582
+Iteration 1:   log pseudo-likelihood = -50.186572
+Iteration 2:   log pseudo-likelihood = -46.266465
+Iteration 3:   log pseudo-likelihood = -45.668049
+Iteration 4:   log pseudo-likelihood = -45.648704
+Iteration 5:   log pseudo-likelihood = -45.648672
+
+Logit estimates                                   Number of obs   =        122
+                                                  Wald chi2(11)   =      41.47
+                                                  Prob > chi2     =     0.0000
+Log pseudo-likelihood = -45.648672                Pseudo R2       =     0.4234
+
+                          (standard errors adjusted for clustering on cluster)
+------------------------------------------------------------------------------
+             |               Robust
+           y |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          x1 |  -1.742004   .6086493    -2.86   0.004    -2.934935   -.5490735
+          x2 |    -.44485   .1255217    -3.54   0.000     -.690868    -.198832
+          x3 |   .0063857   .0056405     1.13   0.258    -.0046695     .017441
+          x4 |  -1.258933   .7033537    -1.79   0.073    -2.637481    .1196144
+          x5 |   .0616696   .0654354     0.94   0.346    -.0665813    .1899205
+          x6 |   .0040934    .001584     2.58   0.010     .0009888    .0071981
+          x7 |   .0007901   .0004274     1.85   0.065    -.0000477    .0016278
+          x8 |  -6.016181    3.07149    -1.96   0.050    -12.03619    .0038288
+          x9 |  -.2987759   .1690799    -1.77   0.077    -.6301664    .0326147
+         x10 |   2.124369   .8212553     2.59   0.010      .514738       3.734
+          un |   3.135184   1.091125     2.87   0.004     .9966177    5.273751
+       _cons |   8.608863     2.1571     3.99   0.000     4.381024     12.8367
+------------------------------------------------------------------------------
+
+Simulating main parameters.  Please wait....
+
+Note: Clarify is expanding your dataset from 122 observations to 1000
+observations in order to accommodate the simulations.  This will append
+missing values to the bottom of your original dataset.
+
+% of simulations completed: 8% 16% 25% 33% 41% 50% 58% 66% 75% 83% 91% 100% 
+
+Number of simulations  : 1000
+Names of new variables : b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12
+Type of simulation     : antithetical
+
+. outfile b12 b1-b11 using beta0.dat, w replace
+
+. drop b*
+
+. gen xu3=x3*un  
+(878 missing values generated)
+
+. 
+. estsimp logit y x1-x10 un xu3, antisim robust cluster(cluster)
+
+Iteration 0:   log pseudo-likelihood = -79.172582
+Iteration 1:   log pseudo-likelihood = -49.666149
+Iteration 2:   log pseudo-likelihood = -45.718463
+Iteration 3:   log pseudo-likelihood = -44.995037
+Iteration 4:   log pseudo-likelihood = -44.914884
+Iteration 5:   log pseudo-likelihood = -44.903003
+Iteration 6:   log pseudo-likelihood = -44.902039
+Iteration 7:   log pseudo-likelihood = -44.902028
+Iteration 8:   log pseudo-likelihood = -44.902028
+
+Logit estimates                                   Number of obs   =        122
+                                                  Wald chi2(12)   =      53.21
+                                                  Prob > chi2     =     0.0000
+Log pseudo-likelihood = -44.902028                Pseudo R2       =     0.4329
+
+                          (standard errors adjusted for clustering on cluster)
+------------------------------------------------------------------------------
+             |               Robust
+           y |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          x1 |  -1.666386   .6058667    -2.75   0.006    -2.853863    -.478909
+          x2 |  -.4371468    .125279    -3.49   0.000    -.6826892   -.1916044
+          x3 |   .0055304   .0058193     0.95   0.342    -.0058752    .0169361
+          x4 |  -1.045376   .8994969    -1.16   0.245    -2.808357    .7176057
+          x5 |   .0322828   .1040289     0.31   0.756    -.1716101    .2361756
+          x6 |   .0040839   .0017085     2.39   0.017     .0007353    .0074325
+          x7 |   .0007643   .0004192     1.82   0.068    -.0000574     .001586
+          x8 |   -6.21534   3.065318    -2.03   0.043    -12.22325   -.2074267
+          x9 |   -.283677   .1687572    -1.68   0.093    -.6144351    .0470811
+         x10 |   2.126206   .8017545     2.65   0.008     .5547958    3.697616
+          un |   .2616382   1.392346     0.19   0.851    -2.467311    2.990587
+         xu3 |   .0372672   .0110637     3.37   0.001     .0155826    .0589517
+       _cons |   8.189294   2.350831     3.48   0.000     3.581751    12.79684
+------------------------------------------------------------------------------
+
+Simulating main parameters.  Please wait....
+% of simulations completed: 7% 15% 23% 30% 38% 46% 53% 61% 69% 76% 84% 92% 100% 
+
+Number of simulations  : 1000
+Names of new variables : b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13
+Type of simulation     : antithetical
+
+. outfile b13 b1-b12 using beta1.dat, w replace
+
+. 
+. log close
+       log:  /home/langche/papers/Gary/causal/WP/test/replication.log
+  log type:  text
+ closed on:   3 Jun 2003, 20:16:26
+-----------------------------------------------------------------------------------
