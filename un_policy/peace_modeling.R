@@ -98,14 +98,41 @@ hull.results <- whatif(data=peace.df.minimal.raw, cfact=peace.df.counterfactual)
 # Tragically, none are. Therefore, we predict probabilities on the test set counterfacturl
 counterfactual.test <- peace.df.counterfactual[-train.indices,]
 
-counterfactual.prediction <- function(model) {
-    mean((predict(model, newdata = counterfactual.test, type='prob') - 
+counterfactual.prediction <- function(model, counerfactual) {
+    mean((predict(model, newdata = counerfactual, type='prob') - 
      predict(model, newdata = minimal.test, type='prob'))$X1 *
-        counterfactual.test$counterfact.multiple)
+         counerfactual$counterfact.multiple)
 }
 
-logit.intervention.prediction <- counterfactual.prediction(minimal.caret.logit)
-rf.intervention.prediction <- counterfactual.prediction(minimal.caret.rf)
-nnet.intervention.prediction <- counterfactual.prediction(minimal.caret.nnet)
-svm.intervention.prediction <- counterfactual.prediction(minimal.caret.svm)
+
+logit.intervention.prediction <- counterfactual.prediction(minimal.caret.logit, counterfactual.test)
+rf.intervention.prediction <- counterfactual.prediction(minimal.caret.rf, counterfactual.test)
+nnet.intervention.prediction <- counterfactual.prediction(minimal.caret.nnet, counterfactual.test)
+svm.intervention.prediction <- counterfactual.prediction(minimal.caret.svm, counterfactual.test)
+
+all.counterfactual.predictions <- function(counterfactual) {
+    return (list(logit=counterfactual.prediction(minimal.caret.logit, counterfactual), 
+                 rf=counterfactual.prediction(minimal.caret.rf, counterfactual),
+                 nnet=counterfactual.prediction(minimal.caret.nnet, counterfactual),
+                 svm=counterfactual.prediction(minimal.caret.svm, counterfactual)))
+}
+
+all.counterfactual.predictions(counterfactual.test)
     
+# Create a different counterfactual to observe its effect
+treaty.counterfactual <- peace.df.minimal.raw
+treaty.counterfactual$treaty <- (1 - treaty.counterfactual$treaty)
+treaty.counterfactual$counterfact.multiple <- -1
+treaty.counterfactual$counterfact.multiple[treaty.counterfactual$treaty == 1] <- 1
+treaty.counterfactual.test <- treaty.counterfactual[-train.indices,]
+
+all.counterfactual.predictions(treaty.counterfactual.test)
+
+# And how about one with reducing the log cost by a standard deviation
+logcost.sd <- sd(peace.df.minimal$logcost)
+logcost.counterfactual <- peace.df.minimal.raw
+logcost.counterfactual$logcost <- logcost.counterfactual$logcost - logcost.sd
+logcost.counterfactual$counterfact.multiple <- 1
+logcost.counterfactual.test <- logcost.counterfactual[-train.indices,]
+
+all.counterfactual.predictions(logcost.counterfactual.test)
