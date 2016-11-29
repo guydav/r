@@ -35,3 +35,14 @@ step.result <- stepAIC(minimal.model,
                        scope=list(upper=as.formula(paste("pbs2s3 ~ ", paste(minimal.cols[1:length(minimal.cols) - 1], collapse = ' + '))),
                                   lower="pbs2s3 ~ un2int"))
 summary(step.result)
+
+library(Matching)
+match.seed <- 666
+set.seed(match.seed)
+weights <- GenMatch(Tr=peace.df.minimal.raw$un2int, X=peace.df.minimal.raw, 
+                    max.generations=500, pop.size=5000, wait.generations=10,
+                    int.seed=match.seed, unif.seed=match.seed)
+match <- Match(Y=peace.df.minimal.raw$pbs2s3, Tr=peace.df.minimal.raw$un2int, 
+               X=peace.df.minimal.raw, Weight.matrix=weights, BiasAdjust = TRUE)
+balance <- MatchBalance(un2int ~ . - pbs2s3 , data=peace.df.minimal.raw,
+                        match.out=match, nboots=1000)

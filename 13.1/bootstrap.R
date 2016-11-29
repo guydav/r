@@ -101,5 +101,55 @@ uniform.population <- runif(10000, -5, 5)
 test.confidence.intervals(uniform.population, n, 1000)
 
 
+library(Matching)
+data("lalonde")
+attach(lalonde)
+boot.results <- NULL
+
+for (i in 1:10000) {
+    s <- sample(1:(nrow(lalonde)), size = 445, replace = TRUE)
+    d <- lalonde[s,]
+    reg <- lm(re78 ~ treat, data = d)
+    boot.results <- c(boot.results, summary(reg)$coef[4])
+}
+
+sd(boot.results) 
+
+library(WhatIf)
+
+chessboard <- data.frame(x=numeric(64), y=numeric(64))
+counter = 1
+for (x in 1:8) {
+    for (y in 1:8) {
+        chessboard[counter,'x'] <- x
+        chessboard[counter,'y'] <- y
+        counter = counter + 1
+    }
+}
+
+chessboard.whatif <- whatif(data = chessboard, cfact = chessboard)
+summary(chessboard.whatif)
+
+chessboard.cfact <- chessboard
+chessboard.cfact$x <- chessboard.cfact$x - 1
+cfact.whatif <- whatif(data = chessboard, cfact = chessboard.cfact)
+summary(cfact.whatif)
 
 
+chess.3d <- data.frame(x=numeric(1000), y=numeric(1000), z=numeric(1000))
+counter = 1
+for (x in 1:10) {
+    for (y in 1:10) {
+        for (z in 1:10) {
+            chess.3d[counter,'x'] <- x
+            chess.3d[counter,'y'] <- y
+            chess.3d[counter,'z'] <- z
+            counter = counter + 1   
+        }
+    }
+}
+
+chess.3d.whatif <- whatif(data = chess.3d, cfact = chess.3d)
+chess.3d.cfact <- chess.3d
+chess.3d.cfact$x <- chess.3d.cfact$x - 1
+cfact.3d.whatif <- whatif(data = chess.3d, cfact = chess.3d.cfact)
