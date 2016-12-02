@@ -3,6 +3,7 @@ library(MASS)
 library(caret)
 library(WhatIf)
 library(reshape)
+library(foreach)
 setwd('~/projects/r/un_policy/')
 seed <- 33
 
@@ -258,6 +259,23 @@ svm.max.cutoff.classes <- cutoff.predict(minimal.caret.svm, minimal.test, svm.ma
 confusionMatrix(data=svm.max.cutoff.classes, minimal.test$pbs2s3, positive = 'X1')
 
 # Open question - how can it be that not all data points are within the convex hull??
-# summary(whatif(data=peace.df.minimal.raw, cfact=peace.df.minimal.raw))
+summary(whatif(data=peace.df.minimal.raw, cfact=peace.df.minimal.raw[c(3, 37, 48, 56, 84, 100),]))
 
+i <- 20
+which(summary(whatif(data=peace.df.minimal.raw[1:i,], cfact=peace.df.minimal.raw[1:i,]))$sum.df$in.hull == FALSE)    
+
+i <- 40
+which(summary(whatif(data=peace.df.minimal.raw[1:i,], cfact=peace.df.minimal.raw[1:i,]))$sum.df$in.hull == FALSE)    
+
+i <- 60
+which(summary(whatif(data=peace.df.minimal.raw[1:i,], cfact=peace.df.minimal.raw[1:i,]))$sum.df$in.hull == FALSE)    
+
+i <- 80
+which(summary(whatif(data=peace.df.minimal.raw[1:i,], cfact=peace.df.minimal.raw[1:i,]))$sum.df$in.hull == FALSE)    
+
+i <- 100
+which(summary(whatif(data=peace.df.minimal.raw[1:i,], cfact=peace.df.minimal.raw[1:i,]))$sum.df$in.hull == FALSE)    
+
+i <- 119
+which(summary(whatif(data=peace.df.minimal.raw[1:i,], cfact=peace.df.minimal.raw[1:i,]))$sum.df$in.hull == FALSE)    
 

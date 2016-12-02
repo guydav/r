@@ -1,0 +1,337 @@
+year	month	day	studentid	groupna	treatment	caste	round1	round2	class	seenmaze	knowkids	read	schtype	math1	math2	math3	math4	hindi1	hindi2	hindi3	mothedu	fathedu	mothocc	fathocc	land
+2003	1	1	1	42	1	kshatriya	4	8	7	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	field	3
+2003	1	1	2	42	1	chamar	4	4	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	0.79781
+2003	1	1	3	42	1	kshatriya	1	1	6	0	2	1	NA	NA	NA	NA	NA	NA	NA	NA	10	8	housewife	field	1.6
+2003	1	1	4	42	1	kshatriya	3	3	6	0	2	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	field	1.83027
+2003	1	1	5	42	1	chamar	5	8	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field+ construction	0
+2003	1	1	6	42	1	chamar	0	0	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	6	10	housewife	field	0
+2003	1	1	7	51	1	brahmin	1	6	7	1	2	1	NA	NA	NA	NA	NA	NA	NA	NA	literate	literate	was a nurse	jyothi ka kaam	0.05187
+2003	1	1	8	51	1	chamar	2	4	6	0	1	1	1	NA	NA	NA	NA	NA	NA	NA	illiterate	literate	housewife	farmer	0.49894
+2003	1	1	9	51	1	chamar	2	4	NA	0	1	1	1	NA	NA	NA	NA	NA	NA	NA	illiterate	literate	housewife	farmer	0.82004
+2003	1	1	10	51	1	kshatriya	4	6	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	illiterate	literate	housewife	farmer	3.6
+2003	1	1	11	51	1	chamar	3	4	6	0	0	1	1	NA	NA	NA	NA	NA	NA	NA	illiterate	literate	housewife	farmer	NA
+2003	1	1	12	51	1	kshatriya	3	5	6	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	illiterate	literate	housewife	wage labour in Delhi	0
+2003	1	1	13	63	1	chamar	5	7	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	8	10	nothing	field	0.49894
+2003	1	1	14	63	1	brahmin	2	5	7	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	BA	anganwadi	driver	1.5067
+2003	1	1	15	63	1	kshatriya	4	7	7	1	3	1	NA	NA	NA	NA	NA	NA	NA	NA	6	11	housewife	govt. service	0.5681
+2003	1	1	16	63	1	chamar	2	1	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	10	nothing	wage laborer	1.99823
+2003	1	1	17	63	1	chamar	2	6	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	7	housewife	field	1.78828
+2003	1	1	18	63	1	kshatriya	4	8	6	1	1	0	NA	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	field	10.2011
+2003	1	1	19	71	1	kshatriya	8	14	7	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	literate	literate	housewife	field	4.4
+2003	1	1	20	71	1	chamar	3	1	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	illiterate	literate	housewife	field	1.54869
+2003	1	1	21	71	1	chamar	5	6	7	0	3	0	1	NA	NA	NA	NA	NA	NA	NA	literate	literate	housewife	field	0.6
+2003	1	1	22	71	1	chamar	2	0	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field+ wage labour	3.4
+2003	1	1	23	71	1	brahmin	4	4	7	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	literate	literate	housewife	field	NA
+2003	1	1	24	71	1	brahmin	4	6	7	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	literate	literate	housewife	farmer	5
+2003	1	1	25	82	1	chamar	3	3	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	8	BA	housewife	field	0.99788
+2003	1	1	26	82	1	kshatriya	3	5	6	NA	1	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	field	0.49894
+2003	1	1	27	82	1	chamar	4	8	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	field	0.20007
+2003	1	1	28	82	1	kshatriya	2	2	7	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	field	NA
+2003	1	1	29	82	1	chamar	4	4	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	0.59774
+2003	1	1	30	82	1	brahmin	3	9	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	9	5	housewife	field+ driver	1.4
+2003	1	1	31	93	1	chamar	3	7	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	0.76323
+2003	1	1	32	93	1	chamar	2	3	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	wage laborer	0
+2003	1	1	33	93	1	chamar	3	3	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	0.43966
+2003	1	1	34	93	1	brahmin	2	1	7	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	10	BA	housewife	field	1.4
+2003	1	1	35	93	1	kshatriya	2	6	7	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	field	0.3211
+2003	1	1	36	93	1	brahmin	2	4	7	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	10	MA	housewife	Teacher	1.4
+2003	1	2	37	52	1	brahmin	2	6	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	field+ wage labour	1.4
+2003	1	2	38	52	1	chamar	2	2	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	field	0.1
+2003	1	2	39	52	1	chamar	1	0	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	5	NA	housewife	nothing	2
+2003	1	2	40	52	1	kshatriya	5	7	7	1	0	0	NA	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	field	1.90437
+2003	1	2	41	52	1	brahmin	5	8	7	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	12	housewife	field+ contractor	1.2
+2003	1	2	42	52	1	chamar	5	8	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	field+ wage labour	0.8
+2003	1	2	43	63	1	kshatriya	4	3	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	wage laborer	NA
+2003	1	2	44	63	1	chamar	2	8	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	5	9	housewife	wage laborer	0.49894
+2003	1	2	45	63	1	kshatriya	3	4	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	wage laborer	1
+2003	1	2	46	63	1	chamar	2	2	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	NA	0.80028
+2003	1	2	47	63	1	chamar	5	7	7	0	3	0	1	NA	NA	NA	NA	NA	NA	NA	dead	11	housewife	wage laborer	0.99788
+2003	1	2	48	63	1	kshatriya	3	4	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	wage laborer	2.9887
+2003	1	2	49	82	1	kshatriya	3	8	6	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	5	dead	field	dead	2.85532
+2003	1	2	50	82	1	kshatriya	1	6	7	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	2
+2003	1	2	51	82	1	chamar	1	1	NA	NA	NA	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.125
+2003	1	2	52	82	1	chamar	2	1	NA	NA	NA	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	2.4
+2003	1	2	53	82	1	kshatriya	5	9	7	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	5	NA	housewife	field	2.67254
+2003	1	2	54	82	1	chamar	2	5	6	0	1	1	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	wage laborer	0.8
+2003	1	2	55	93	1	chamar	3	3	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	4	10	housewife	driver	0
+2003	1	2	56	93	1	chamar	5	7	6	0	1	1	1	NA	NA	NA	NA	NA	NA	NA	NA	9	housewife	field	1.36591
+2003	1	2	57	93	1	chamar	1	5	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	0.4446
+2003	1	2	58	93	1	kshatriya	2	3	7	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	field+ shop	0.97071
+2003	1	2	59	93	1	kshatriya	4	4	7	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field	3
+2003	1	2	60	93	1	kshatriya	3	3	6	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	5	12	housewife	field	1.76358
+2003	1	3	61	52	2	kshatriya	3	1	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	field	NA
+2003	1	3	62	52	2	chamar	4	8	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	2	housewife	majdoori	0
+2003	1	3	63	52	2	chamar	7	12	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	father not there	1.07692
+2003	1	3	64	52	2	brahmin	0	0	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	field	3.6
+2003	1	3	65	52	2	brahmin	1	1	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	field	3.6
+2003	1	3	66	52	2	chamar	2	2	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	majdoori	majdoori	0.24947
+2003	1	3	67	82	2	chamar	1	5	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	wage laborer	0.99788
+2003	1	3	68	82	2	kshatriya	0	0	7	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field	3.6
+2003	1	3	69	82	2	chamar	4	11	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	field	1.2844
+2003	1	3	70	82	2	chamar	3	7	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	field	NA
+2003	1	3	71	82	2	kshatriya	4	6	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	field	7
+2003	1	3	72	82	2	kshatriya	0	0	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field, priest	1.59809
+2003	1	3	73	112	2	chamar	4	10	NA	NA	NA	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1.2
+2003	1	3	74	112	2	chamar	2	5	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	field	1.19795
+2003	1	3	75	112	2	brahmin	2	1	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field	2.4
+2003	1	3	76	112	2	brahmin	0	0	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field	0.63232
+2003	1	3	77	112	2	chamar	2	3	NA	NA	NA	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	2
+2003	1	3	78	112	2	brahmin	3	2	6	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	3	NA	housewife	majdoori	0.21736
+2003	1	4	79	52	2	chamar	5	12	6	1	NA	1	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	house+field	field	0.99788
+2003	1	4	80	52	2	kshatriya	5	9	6	1	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	don't know	5	housewife	govt. service	2.08715
+2003	1	4	81	52	2	brahmin	4	8	7	1	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	don't know	8	housewife	field	1.2
+2003	1	4	82	52	2	brahmin	4	1	6	0	NA	0	NA	NA	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	photographer in Hardoi	NA
+2003	1	4	83	52	2	chamar	3	5	7	1	NA	1	1	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	field	0.49894
+2003	1	4	84	52	2	chamar	0	0	6	0	NA	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	field	4.94
+2003	1	4	85	61	1	thakur	3	7	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	agriculture	NA
+2003	1	4	86	61	1	thakur	6	3	7	1	2	1	0	NA	NA	NA	NA	NA	NA	NA	don't know	15	housewife	Business	NA
+2003	1	4	87	61	1	chamar	3	4	6	1	1	1	0	NA	NA	NA	NA	NA	NA	NA	6	10	housewife	agriculture	NA
+2003	1	4	88	61	1	chamar	5	9	6	0	1	1	1	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	agriculture	NA
+2003	1	4	89	61	1	thakur	7	9	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	5	NA	housewife	Business	NA
+2003	1	4	90	61	1	chamar	0	3	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	7	8	housewife	agriculture	NA
+2003	1	4	91	71	2	chamar	3	7	6	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	agriculture	NA
+2003	1	4	92	71	2	thakur	0	0	6	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	service	NA
+2003	1	4	93	71	2	brahmin	0	4	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	agriculture	NA
+2003	1	4	94	71	2	chamar	6	12	6	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	NA	6	housewife	Labour	NA
+2003	1	4	95	71	2	chamar	0	3	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	agriculture	NA
+2003	1	4	96	71	2	brahmin	2	3	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	agriculture	NA
+2003	1	4	97	81	2	chamar	4	2	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	4	15	Dead	Business	NA
+2003	1	4	98	81	2	thakur	0	0	7	0	1	1	0	NA	NA	NA	NA	NA	NA	NA	8	12	housewife	agriculture	NA
+2003	1	4	99	81	2	chamar	0	4	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	1	4	100	81	2	chamar	2	6	7	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	9	housewife	agriculture	NA
+2003	1	4	101	81	2	vaishya	0	2	6	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	Business	NA
+2003	1	4	102	81	2	thakur	5	9	6	0	2	1	0	NA	NA	NA	NA	NA	NA	NA	6	8	housewife	agriculture	NA
+2003	1	4	103	82	2	chamar	3	4	6	0	NA	0	1	NA	NA	NA	NA	NA	NA	NA	8	9	housewife	wage laborer	0.2
+2003	1	4	104	82	2	chamar	3	8	7	0	NA	0	1	NA	NA	NA	NA	NA	NA	NA	NA	10	field	field	0.27911
+2003	1	4	105	82	2	chamar	2	0	6	0	NA	1	1	NA	NA	NA	NA	NA	NA	NA	4	6	brick construction	brick factory	0.075
+2003	1	4	106	82	2	brahmin	5	6	6	0	NA	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	farmer	2.9887
+2003	1	4	107	82	2	brahmin	4	5	7	0	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	driver	NA
+2003	1	4	108	82	2	kshatriya	5	9	7	1	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	6	10	housewife	watchman in Hardoi	2
+2003	1	4	109	91	2	chamar	4	8	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	agriculture	NA
+2003	1	4	110	91	2	chamar	0	2	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	2	3	housewife	agriculture	NA
+2003	1	4	111	91	2	brahmin	5	9	6	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	1	4	112	91	2	brahmin	1	11	7	0	1	1	0	NA	NA	NA	NA	NA	NA	NA	9	10	housewife	agriculture	NA
+2003	1	4	113	91	2	chamar	3	9	7	0	0	1	1	NA	NA	NA	NA	NA	NA	NA	9	5	housewife	agriculture	NA
+2003	1	4	114	91	2	vaishya	6	9	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	Business	NA
+2003	1	4	115	112	2	chamar	5	11	7	0	4	1	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	field	3
+2003	1	4	116	112	2	chamar	1	6	7	0	4	0	1	NA	NA	NA	NA	NA	NA	NA	NA	3	field	field	5.2
+2003	1	4	117	112	2	chamar	1	3	6	0	5	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	construction	1
+2003	1	4	118	112	2	brahmin	6	10	7	1	4	1	NA	NA	NA	NA	NA	NA	NA	NA	5	9	housewife	field	NA
+2003	1	4	119	112	2	kshatriya	4	8	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	5	MA	housewife	field+teacher	1.7
+2003	1	4	120	112	2	brahmin	5	8	6	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	field	2.21806
+2003	1	5	121	52	2	chamar	2	6	7	0	4	0	NA	NA	NA	NA	NA	NA	NA	NA	6	10	housewife	field	NA
+2003	1	5	122	52	2	kshatriya	4	5	7	0	5	0	NA	NA	NA	NA	NA	NA	NA	NA	10	10	housewife	field	NA
+2003	1	5	123	52	2	kshatriya	6	9	7	0	5	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	9	housewife	field	NA
+2003	1	5	124	52	2	kshatriya	5	6	6	0	3	0	NA	NA	NA	NA	NA	NA	NA	NA	5	9	Tailor, embroidery	press (ironing or printing press?)	NA
+2003	1	5	125	52	2	chamar	3	7	7	0	5	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	wage laborer	NA
+2003	1	5	126	52	2	chamar	3	4	7	0	4	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field	NA
+2003	1	5	127	82	2	chamar	4	7	6	0	2	0	NA	NA	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	field	NA
+2003	1	5	128	82	2	kshatriya	4	11	6	0	3	1	NA	NA	NA	NA	NA	NA	NA	NA	10	BA	housewife	teacher	NA
+2003	1	5	129	82	2	chamar	5	8	6	0	2	0	NA	NA	NA	NA	NA	NA	NA	NA	5	5	housewife	field	NA
+2003	1	5	130	82	2	kshatriya	9	13	7	0	2	1	NA	NA	NA	NA	NA	NA	NA	NA	12	BA	housewife	army	NA
+2003	1	5	131	82	2	chamar	11	14	6	0	2	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	4	housewife	dead	NA
+2003	1	5	132	82	2	kshatriya	3	10	7	1	3	1	NA	NA	NA	NA	NA	NA	NA	NA	10	12	housewife	field	NA
+2003	1	6	133	52	2	chamar	4	4	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	14	12	housewife	field	NA
+2003	1	6	134	52	2	chamar	3	3	6	0	3	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	15	housewife	wage laborer	NA
+2003	1	6	135	52	2	chamar	1	0	6	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	14	housewife	field	NA
+2003	1	6	136	52	2	kshatriya	1	4	6	0	2	0	NA	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	watchman in Hardoi	NA
+2003	1	6	137	52	2	kshatriya	3	2	7	0	3	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	wage laborer	NA
+2003	1	6	138	52	2	kshatriya	3	2	7	0	3	1	NA	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	field	NA
+2003	1	6	139	61	2	chamar	3	7	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	1	6	140	61	2	thakur	4	10	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	1	6	141	61	2	thakur	2	1	6	0	0	1	0	NA	NA	NA	NA	NA	NA	NA	15	10	housewife	service	NA
+2003	1	6	142	61	2	thakur	4	8	7	0	0	0	0	NA	NA	NA	NA	NA	NA	NA	5	15	housewife	service	NA
+2003	1	6	143	61	2	chamar	0	0	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	5	15	housewife	service	NA
+2003	1	6	144	61	2	chamar	3	8	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	agriculture	NA
+2003	1	6	145	71	2	thakur	5	6	6	0	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	don't know	housewife	Dead	NA
+2003	1	6	146	71	2	thakur	4	13	6	0	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	service	NA
+2003	1	6	147	71	2	chamar	4	5	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	1	6	148	71	2	thakur	2	5	6	1	0	1	0	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	1	6	149	71	2	chamar	0	1	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	agriculture	NA
+2003	1	6	150	71	2	chamar	3	3	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	1	6	151	81	2	thakur	7	11	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	12	17	housewife	service	NA
+2003	1	6	152	81	2	thakur	2	4	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	1	6	153	81	2	chamar	3	3	7	0	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	agriculture	NA
+2003	1	6	154	81	2	thakur	2	9	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	9	10	housewife	agriculture	NA
+2003	1	6	155	81	2	chamar	3	9	7	0	0	1	1	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	Business	NA
+2003	1	6	156	81	2	chamar	5	7	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	2	15	housewife	service	NA
+2003	1	6	157	82	2	kshatriya	4	6	7	1	3	1	NA	NA	NA	NA	NA	NA	NA	NA	10	15	housewife	field	NA
+2003	1	6	158	82	2	chamar	3	3	7	0	1	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	sillai	NA
+2003	1	6	159	82	2	kshatriya	3	3	6	0	2	0	NA	NA	NA	NA	NA	NA	NA	NA	don't know	12	housewife	salesman	NA
+2003	1	6	160	82	2	chamar	7	7	7	0	2	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	wage laborer	NA
+2003	1	6	161	82	2	brahmin	2	6	6	0	3	0	NA	NA	NA	NA	NA	NA	NA	NA	10	10	housewife	field	NA
+2003	1	6	162	82	2	chamar	1	4	7	0	1	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	field	NA
+2003	3	2	163	71	1	chamar	1	6	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	3	2	164	71	1	thakur	3	4	6	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	agriculture	NA
+2003	3	2	165	71	1	chamar	0	2	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	6	5	housewife	agriculture	NA
+2003	3	2	166	71	1	thakur	6	5	6	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	12	housewife	service	NA
+2003	3	2	167	71	1	chamar	7	9	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	agriculture	NA
+2003	3	2	168	71	1	thakur	1	2	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	agriculture	NA
+2003	3	2	169	81	1	chamar	3	5	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	agriculture	NA
+2003	3	2	170	81	1	chamar	3	5	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	5	Dead	Business	NA
+2003	3	2	171	81	1	thakur	2	7	6	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	3	2	172	81	1	thakur	6	10	7	0	3	0	0	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	agriculture	NA
+2003	3	2	173	81	1	chamar	1	5	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	agriculture	NA
+2003	3	2	174	81	1	thakur	4	8	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	NA	8	housewife	agriculture	NA
+2003	3	2	175	91	1	thakur	7	11	7	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	10	10	housewife	agriculture	NA
+2003	3	2	176	91	1	chamar	3	2	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	Business	NA
+2003	3	2	177	91	1	chamar	0	0	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	7	8	housewife	agriculture	NA
+2003	3	2	178	91	1	thakur	5	14	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	NA	5	housewife	agriculture	NA
+2003	3	2	179	91	1	chamar	0	0	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	don't know	NA	Dead	agriculture	NA
+2003	3	2	180	91	1	thakur	1	2	6	0	1	1	0	NA	NA	NA	NA	NA	NA	NA	10	12	housewife	Business	NA
+2003	3	3	181	61	1	chamar	6	12	7	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	service	NA
+2003	3	3	182	61	1	chamar	5	8	7	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	8	12	housewife	service	NA
+2003	3	3	183	61	1	chamar	0	0	7	1	1	1	1	NA	NA	NA	NA	NA	NA	NA	10	8	housewife	agriculture	NA
+2003	3	3	184	61	1	brahmin	4	5	6	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	agriculture	NA
+2003	3	3	185	61	1	brahmin	8	10	7	1	2	0	1	NA	NA	NA	NA	NA	NA	NA	3	10	housewife	Teacher	NA
+2003	3	3	186	61	1	brahmin	1	8	6	0	0	0	0	NA	NA	NA	NA	NA	NA	NA	10	12	housewife	agriculture	NA
+2003	3	3	187	71	1	thakur	1	3	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	3	7	housewife	agriculture	NA
+2003	3	3	188	71	1	chamar	0	0	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	5	7	housewife	agriculture	NA
+2003	3	3	189	71	1	thakur	4	11	6	0	0	0	0	NA	NA	NA	NA	NA	NA	NA	10	12	housewife	service	NA
+2003	3	3	190	71	1	chamar	2	7	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	agriculture	NA
+2003	3	3	191	71	1	chamar	5	9	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	Labour	NA
+2003	3	3	192	71	1	thakur	10	12	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	agriculture	NA
+2003	3	3	193	81	1	thakur	4	12	6	0	0	0	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	3	3	194	81	1	chamar	0	0	6	0	6	0	1	NA	NA	NA	NA	NA	NA	NA	NA	12	housewife	agriculture	NA
+2003	3	3	195	81	1	chamar	0	3	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	3	3	196	81	1	chamar	9	12	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	Labour	NA
+2003	3	3	197	81	1	brahmin	0	0	7	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	3	3	198	81	1	brahmin	0	2	6	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	10	12	housewife	Teacher	NA
+2003	3	3	199	91	1	chamar	4	7	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	2	5	housewife	agriculture	NA
+2003	3	3	200	91	1	thakur	1	1	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	9	8	housewife	agriculture	NA
+2003	3	3	201	91	1	thakur	4	7	7	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	10	housewife	service	NA
+2003	3	3	202	91	1	thakur	3	3	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	service	NA
+2003	3	3	203	91	1	chamar	0	0	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	6	housewife	agriculture	NA
+2003	3	3	204	91	1	chamar	3	4	6	0	1	0	1	NA	NA	NA	NA	NA	NA	NA	don't know	6	housewife	agriculture	NA
+2003	3	3	205	101	1	thakur	1	4	7	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	agriculture	NA
+2003	3	3	206	101	1	chamar	2	4	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2003	3	3	207	101	1	brahmin	5	10	7	0	3	0	0	NA	NA	NA	NA	NA	NA	NA	5	8	housewife	agriculture	NA
+2003	3	3	208	101	1	chamar	0	0	6	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	6	housewife	agriculture	NA
+2003	3	3	209	101	1	thakur	0	2	7	0	2	0	0	NA	NA	NA	NA	NA	NA	NA	5	12	housewife	agriculture	NA
+2003	3	3	210	101	1	chamar	3	6	7	0	3	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	Business	NA
+2003	3	3	211	111	1	thakur	3	11	7	0	1	1	0	NA	NA	NA	NA	NA	NA	NA	5	15	housewife	agriculture	NA
+2003	3	3	212	111	1	thakur	8	9	6	1	0	1	1	NA	NA	NA	NA	NA	NA	NA	12	17	housewife	Teacher	NA
+2003	3	3	213	111	1	thakur	2	10	6	0	1	0	0	NA	NA	NA	NA	NA	NA	NA	NA	10	housewife	Dead	NA
+2003	3	3	214	111	1	chamar	0	0	7	0	0	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	Labour	NA
+2003	3	3	215	111	1	chamar	4	5	6	0	2	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2003	3	3	216	111	1	chamar	3	8	6	0	4	0	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2005	3	1	217	1	2	chamar	3	1	6	0	0	0	1	1	1	0	1	1	1	1	10	12	housewife	shopkeeper	NA
+2005	3	1	218	1	2	chamar	2	0	7	0	0	1	1	1	1	0	1	1	1	1	NA	BA	housewife	service	NA
+2005	3	1	219	1	2	thakur	2	6	7	0	0	1	1	1	1	1	1	1	1	1	10	10	housewife	agriculture	NA
+2005	3	1	220	1	2	lala	0	0	7	0	0	0	1	0	0	0	0	1	0	NA	NA	9	housewife	wage laborer	NA
+2005	3	1	221	1	2	brahmin	2	2	6	0	0	0	1	1	1	0	1	NA	NA	NA	5	8	housewife	agriculture	NA
+2005	3	1	222	1	2	chamar	5	10	7	0	0	1	1	1	1	1	1	1	1	1	8	10	housewife	wage laborer	NA
+2005	3	1	223	2	2	thakur	3	10	6	0	0	1	1	1	1	1	1	1	1	1	8	10	agriculture/housewife	agriculture	NA
+2005	3	1	224	2	2	chamar	2	4	7	0	0	1	1	1	1	0	0	1	1	1	NA	5	housewife	agriculture	NA
+2005	3	1	225	2	2	chamar	3	10	NA	0	0	1	1	1	NA	NA	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	1	226	2	2	thakur	10	10	NA	0	0	1	1	1	NA	NA	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	1	227	2	2	chamar	1	1	7	0	0	1	1	1	1	1	1	1	1	1	NA	10	housewife	agriculture	NA
+2005	3	1	228	2	2	brahmin	6	6	7	0	0	0	1	1	1	1	1	1	1	1	11	don't know	housewife	doctor	NA
+2005	3	1	229	3	2	chamar	3	4	6	0	0	NA	1	NA	1	NA	NA	NA	NA	NA	NA	NA	housewife	teacher	NA
+2005	3	1	230	3	2	brahmin	2	6	7	0	0	0	1	1	1	1	1	1	1	1	5	8	housewife	agriculture	NA
+2005	3	1	231	3	2	thakur	3	6	7	1	0	0	1	1	1	1	1	1	1	1	12	12	housewife	business	NA
+2005	3	1	232	3	2	brahmin	4	7	6	0	0	NA	1	NA	1	NA	NA	NA	NA	NA	NA	NA	housewife	teacher	NA
+2005	3	1	233	3	2	chamar	3	7	7	0	0	0	1	1	1	0	1	NA	NA	NA	NA	don't know	housewife	agriculture	NA
+2005	3	1	234	3	2	chamar	2	3	7	0	0	1	1	1	1	1	1	1	1	1	1	3	housewife	wage laborer	NA
+2005	3	1	235	4	2	lala	4	3	7	0	0	1	1	1	1	NA	1	1	1	1	9	10	dead	agriculture	NA
+2005	3	1	236	4	2	brahmin	3	9	6	0	0	0	1	1	1	0	1	1	1	1	NA	8	housewife	agriculture	NA
+2005	3	1	237	4	2	thakur	5	9	7	0	0	0	1	1	1	1	0	1	1	1	8	10	housewife	service	NA
+2005	3	1	238	4	2	chamar	5	10	7	0	0	0	1	1	1	NA	NA	1	0	0	NA	NA	housewife	agriculture	NA
+2005	3	1	239	4	2	chamar	3	9	7	0	0	1	1	1	1	0	1	1	1	1	NA	10	housewife	agriculture	NA
+2005	3	1	240	4	2	chamar	6	9	6	0	0	0	1	1	0	1	1	1	1	1	don't know	don't know	housewife	service	NA
+2005	3	1	241	5	2	chamar	4	5	6	1	0	1	1	1	1	1	1	1	1	1	NA	5	housewife	agriculture	NA
+2005	3	1	242	5	2	thakur	4	9	6	0	0	1	1	1	1	1	1	1	1	1	8	11	teacher	agriculture	NA
+2005	3	1	243	5	2	chamar	7	11	6	0	0	1	1	0	0	0	0	1	0	0	NA	NA	housewife	agriculture	NA
+2005	3	1	244	5	2	chamar	2	9	7	0	0	0	1	0	0	1	0	0	0	0	NA	NA	housewife	agriculture	NA
+2005	3	1	245	5	2	brahmin	4	8	7	0	0	1	1	1	0	1	1	0	1	0	NA	NA	housewife	agriculture	NA
+2005	3	1	246	5	2	brahmin	4	8	7	0	0	0	1	1	1	1	1	1	1	1	5	8	housewife	agriculture	NA
+2005	3	1	247	6	2	thakur	3	3	6	0	0	1	1	1	0	0	1	1	1	1	5	8	housewife	service	NA
+2005	3	1	248	6	2	chamar	2	1	6	0	0	0	1	1	0	0	0	0	0	1	NA	10	housewife	wage laborer	NA
+2005	3	1	249	6	2	chamar	5	6	7	0	0	1	1	1	1	0	1	NA	NA	NA	NA	10	housewife	service	NA
+2005	3	1	250	6	2	thakur	2	5	7	0	0	0	1	1	0	1	0	1	1	1	5	12	housewife	agriculture	NA
+2005	3	1	251	6	2	chamar	4	4	6	0	0	0	1	0	0	0	0	0	0	0	NA	10	housewife	dead	NA
+2005	3	1	252	6	2	thakur	4	10	7	0	0	0	1	1	1	1	1	1	1	1	5	5	agriculture/housewife	agriculture	NA
+2005	3	1	253	7	2	chamar	3	5	7	0	0	1	1	1	1	0	1	0	0	NA	NA	9	housewife	service	NA
+2005	3	1	254	7	2	thakur	3	6	7	0	0	0	1	1	1	1	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	1	255	7	2	thakur	6	8	7	0	0	1	1	1	1	1	1	1	1	1	12	12	housewife	agriculture	NA
+2005	3	1	256	7	2	brahmin	5	4	6	0	0	1	1	0	0	0	0	NA	NA	NA	don't know	BA	housewife	agriculture	NA
+2005	3	1	257	7	2	chamar	1	1	6	0	0	1	1	1	1	1	1	NA	NA	NA	NA	10	agriculture	agriculture	NA
+2005	3	1	258	7	2	chamar	4	6	7	0	0	0	1	1	0	0	0	NA	NA	NA	NA	10	housewife	agriculture	NA
+2005	3	1	259	8	2	thakur	5	8	6	0	0	1	1	1	1	1	0	0	0	0	NA	5	housewife	agriculture	NA
+2005	3	1	260	8	2	chamar	3	2	7	0	0	0	1	0	0	0	0	0	0	0	NA	5	housewife	agriculture	NA
+2005	3	1	261	8	2	brahmin	3	6	7	0	0	0	1	1	1	1	1	NA	NA	NA	8	10	housewife	service	NA
+2005	3	1	262	8	2	vaishya	4	5	7	0	0	0	1	1	1	1	1	1	1	1	NA	12	housewife	agriculture	NA
+2005	3	1	263	8	2	chamar	4	7	7	0	0	0	1	0	0	0	0	NA	NA	NA	5	8	housewife	agriculture	NA
+2005	3	1	264	8	2	chamar	4	6	6	0	0	0	1	1	0	0	1	NA	NA	NA	NA	3	housewife	agriculture	NA
+2005	3	1	265	9	2	vaishya	4	7	7	0	0	1	1	1	1	1	1	1	1	1	5	16	housewife	agriculture	NA
+2005	3	1	266	9	2	chamar	3	5	6	0	0	1	1	1	1	1	1	1	1	1	NA	2	housewife	carpenter	NA
+2005	3	1	267	9	2	chamar	0	1	7	0	0	0	1	0	0	0	0	NA	NA	NA	NA	10	housewife	wage laborer	NA
+2005	3	1	268	9	2	thakur	2	6	7	0	0	0	1	1	1	1	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	1	269	9	2	chamar	0	2	7	0	0	1	1	0	0	0	1	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2005	3	1	270	9	2	vaishya	2	4	7	0	0	0	1	1	0	0	0	1	1	1	5	10	housewife	agriculture	NA
+2005	3	1	271	10	2	thakur	4	8	7	0	0	0	1	1	1	1	1	1	1	1	NA	9	housewife	agriculture	NA
+2005	3	1	272	10	2	vaishya	2	6	7	0	0	1	1	1	0	0	1	1	1	1	NA	9	housewife	agriculture	NA
+2005	3	1	273	10	2	chamar	6	12	7	0	0	0	1	0	0	0	NA	NA	NA	NA	NA	NA	housewife	agriculture	NA
+2005	3	1	274	10	2	chamar	4	5	7	0	0	1	1	1	0	0	1	1	1	1	NA	10	housewife	agriculture	NA
+2005	3	1	275	10	2	thakur	4	6	7	NA	0	1	1	1	1	0	0	NA	NA	NA	5	10	housewife	salaried work	NA
+2005	3	1	276	10	2	chamar	1	0	7	0	0	0	1	1	0	0	1	1	1	1	NA	10	housewife	agriculture	NA
+2005	3	4	277	2	9	chamar	2	3	6	0	0	1	1	1	0	0	0	0	0	NA	6	12	housewife/agriculture	tailoring	NA
+2005	3	4	278	2	9	chamar	0	1	6	0	0	0	1	0	0	0	NA	NA	NA	NA	NA	NA	housewife	wage laborer	NA
+2005	3	4	279	2	9	chamar	4	5	6	0	0	1	1	1	1	1	1	1	1	1	5	MA	housewife	service	NA
+2005	3	4	280	2	9	chamar	2	2	6	0	0	0	1	0	0	0	0	0	0	0	NA	NA	housewife	wage laborer	NA
+2005	3	4	281	2	9	chamar	2	2	6	0	0	1	1	NA	1	NA	NA	NA	NA	NA	don't know	12	dead	agriculture	NA
+2005	3	4	282	2	9	chamar	2	1	6	0	0	0	1	0	0	0	0	0	0	1	NA	NA	housewife	agriculture	NA
+2005	3	4	283	3	9	brahmin	2	3	6	0	0	0	1	1	1	0	1	1	1	1	9	9	housewife	agriculture	NA
+2005	3	4	284	3	9	thakur	4	5	6	0	0	0	1	1	1	0	1	NA	NA	NA	5	12	housewife	agriculture	NA
+2005	3	4	285	3	9	thakur	1	1	7	0	0	0	1	1	0	0	0	1	1	1	don't know	NA	dead	agriculture	NA
+2005	3	4	286	3	9	thakur	9	11	7	0	0	1	1	1	1	1	1	1	1	1	2	5	housewife/agriculture	agriculture	NA
+2005	3	4	287	3	9	brahmin	5	9	6	0	0	1	1	1	1	1	1	1	1	1	8	12	housewife	business	NA
+2005	3	4	288	3	9	gupta	4	4	7	0	0	1	1	1	1	1	1	0	0	1	don't know	11	housewife	compounder	NA
+2005	3	4	289	4	9	gupta	2	4	7	0	0	1	1	1	1	1	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	4	290	4	9	brahmin	1	1	6	0	0	0	1	0	0	0	1	1	1	1	5	5	housewife	service	NA
+2005	3	4	291	4	9	thakur	3	3	7	0	0	1	1	1	1	0	1	1	1	1	5	8	housewife	agriculture	NA
+2005	3	4	292	4	9	brahmin	6	5	6	0	0	1	1	1	0	0	0	1	1	1	10	BA	housewife	service	NA
+2005	3	4	293	4	9	brahmin	4	1	6	0	0	1	1	1	1	0	1	1	1	1	don't know	BA	dead	agriculture	NA
+2005	3	4	294	4	9	thakur	5	3	7	0	0	0	1	1	1	1	0	1	1	1	12	BA	housewife	agriculture	NA
+2005	3	4	295	5	9	brahmin	2	2	7	0	0	1	1	1	1	0	1	1	1	1	10	MA	housewife	salaried work	NA
+2005	3	4	296	5	9	brahmin	6	5	6	0	0	1	1	0	0	0	0	1	1	1	8	10	housewife	business	NA
+2005	3	4	297	5	9	thakur	5	8	7	0	0	0	1	1	1	1	1	1	1	1	8	10	housewife	agriculture	NA
+2005	3	4	298	5	9	thakur	1	7	7	0	0	1	1	1	1	1	0	1	1	1	5	8	housewife	agriculture	NA
+2005	3	4	299	5	9	brahmin	2	2	7	0	0	1	1	0	1	1	0	1	1	1	5	5	housewife	agriculture	NA
+2005	3	4	300	5	9	brahmin	2	2	6	0	0	0	1	1	1	0	1	1	1	1	6	5	housewife	agriculture	NA
+2005	3	4	301	6	9	brahmin	3	6	7	0	0	1	1	1	1	1	1	1	1	1	5	8	housewife	dead	NA
+2005	3	4	302	6	9	thakur	2	3	7	0	0	1	1	1	1	1	1	1	1	1	10	10	housewife	agriculture	NA
+2005	3	4	303	6	9	brahmin	5	8	7	0	0	1	1	1	1	0	0	1	1	1	8	10	housewife	agriculture	NA
+2005	3	4	304	6	9	thakur	0	1	7	0	0	0	1	0	0	0	0	0	0	0	8	8	housewife	salaried work	NA
+2005	3	4	305	6	9	thakur	4	5	6	0	0	1	1	0	0	0	0	1	1	1	NA	9	housewife	agriculture	NA
+2005	3	4	306	6	9	brahmin	1	0	7	0	0	0	1	1	1	1	1	1	1	1	NA	12	housewife	business	NA
+2005	3	4	307	7	9	thakur	2	6	7	0	0	1	1	0	1	0	0	1	1	1	NA	3	housewife	agriculture	NA
+2005	3	4	308	7	9	thakur	5	8	7	1	0	1	1	0	0	1	1	1	1	1	10	10	housewife	agriculture	NA
+2005	3	4	309	7	9	brahmin	4	6	7	0	0	1	1	0	0	0	0	0	0	1	8	10	housewife	agriculture	NA
+2005	3	4	310	7	9	brahmin	3	7	7	0	0	0	1	0	1	NA	NA	NA	NA	NA	8	12	housewife	agriculture	NA
+2005	3	4	311	7	9	brahmin	0	0	7	0	0	0	1	0	0	0	0	1	0	0	6	BA	housewife	agriculture	NA
+2005	3	4	312	7	9	brahmin	3	4	NA	0	0	0	1	0	1	0	1	1	1	1	3	8	housewife	agriculture	NA
+2005	3	4	313	8	9	chamar	2	4	7	0	0	0	1	0	0	0	1	1	1	1	NA	9	housewife	agriculture	NA
+2005	3	4	314	8	9	chamar	4	7	7	0	0	1	1	1	0	1	1	1	1	1	5	5	housewife	contractor(business)	NA
+2005	3	4	315	8	9	chamar	3	7	7	0	0	0	1	0	0	0	0	0	0	0	don't know	NA	dead	wage laborer	NA
+2005	3	4	316	8	9	chamar	5	8	6	0	0	1	1	1	1	0	0	1	1	1	NA	4	housewife	agriculture	NA
+2005	3	4	317	8	9	chamar	2	4	7	0	0	0	1	1	1	0	0	1	1	1	don't know	8	dead	agriculture	NA
+2005	3	4	318	8	9	chamar	2	5	6	0	0	1	1	1	1	1	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	4	319	9	9	chamar	3	3	7	0	0	0	1	0	0	0	0	1	1	1	3	5	housewife	agriculture	NA
+2005	3	4	320	9	9	chamar	3	1	7	0	0	0	1	0	0	0	0	1	1	1	NA	4	housewife	wage laborer	NA
+2005	3	4	321	9	9	chamar	9	11	6	0	0	1	1	1	1	1	1	1	1	1	NA	5	housewife	agriculture	NA
+2005	3	4	322	9	9	chamar	4	6	7	0	0	0	1	1	1	1	0	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	4	323	9	9	chamar	3	6	6	0	0	0	1	1	1	1	0	0	0	0	NA	12	housewife	teacher	NA
+2005	3	4	324	9	9	chamar	0	0	7	0	0	0	1	1	0	0	1	1	1	1	NA	NA	housewife	wage laborer	NA
+2005	3	4	325	10	9	chamar	2	2	6	0	0	0	1	1	1	1	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	4	326	10	9	chamar	3	2	6	0	0	1	1	0	0	0	0	1	1	1	don't know	BA	housewife	agriculture	NA
+2005	3	4	327	10	9	chamar	5	10	6	0	0	0	1	1	1	0	1	1	1	1	NA	NA	housewife	wage laborer	NA
+2005	3	4	328	10	9	chamar	1	2	6	0	0	1	1	1	1	1	0	NA	NA	NA	NA	8	housewife	business	NA
+2005	3	4	329	10	9	chamar	3	3	7	0	0	1	1	0	NA	0	NA	NA	NA	NA	8	10	housewife	agriculture	NA
+2005	3	4	330	10	9	chamar	1	1	6	0	0	0	1	0	NA	NA	NA	NA	NA	NA	don't know	don't know	housewife	teacher	NA
+2005	3	4	331	11	9	chamar	2	5	6	0	0	0	1	1	1	0	0	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	4	332	11	9	chamar	0	0	6	0	0	0	1	0	0	0	0	0	0	1	5	5	housewife	agriculture	NA
+2005	3	4	333	11	9	chamar	5	8	6	0	0	0	1	1	1	1	1	1	1	1	NA	NA	housewife	agriculture	NA
+2005	3	4	334	11	9	chamar	5	9	6	0	0	0	1	1	1	0	0	1	1	1	NA	2	housewife	wage laborer	NA
+2005	3	4	335	11	9	chamar	3	5	6	0	0	0	1	0	0	0	0	0	0	0	don't know	don't know	housewife	agriculture	NA
+2005	3	4	336	11	9	chamar	2	3	6	0	0	0	1	0	1	1	0	0	0	0	don't know	NA	housewife	agriculture	NA
