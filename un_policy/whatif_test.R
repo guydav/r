@@ -19,11 +19,12 @@ whatif.with.itself <- function(data) {
     which(summary(whatif(data=data, cfact=data))$sum.df$in.hull == FALSE)    
 }
 
-results <- data.frame(i=numeric(1), out=character(1), stringsAsFactors = FALSE)
+results <- data.frame(i=numeric(1), outside.hull=numeric(1), stringsAsFactors = FALSE)
 
 for (i in c(seq(10, rows - rows %% 10, 10), rows)) { 
-    out <- paste(whatif.with.itself(peace.df.minimal.raw[1:i,]), collapse = ', ')
-    results <- rbind(results, c(i, out))
+    res <- whatif.with.itself(peace.df.minimal.raw[1:i,])
+    print(paste('Outside of hull in first', i, 'rows:', paste(res, collapse = ', ')))
+    results <- rbind(results, c(i, length(res)))
 }
 
 results
