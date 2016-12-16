@@ -29,7 +29,7 @@ eggs.control <- trainControl(method="repeatedcv", number=10, repeats=3,
 # rf.tune.grid <- expand.grid(mtry=c(12, 14, 16))
 # nnet.tune.grid <- expand.grid(.size = seq(3, 9, 2),
 #                              .decay = seq(0.25, 1.75, 0.5))
-eggs.rf.model <- train(eggs ~ treatment + carriers + log.oocyst + infection + replicate + date, 
+eggs.rf.model <- train(eggs ~ treatment + I(treatment : infection) + carriers + log.oocyst + infection + replicate + gametocyt + date, 
                              data=eggs.train, method='rf', trControl = eggs.control, 
                              preProcess = c('center', 'scale'),  
                              # tuneGrid = rf.tune.grid,
@@ -49,12 +49,12 @@ eggs.control <- trainControl(method="repeatedcv", number=10, repeats=1,
 # rf.tune.grid <- expand.grid(mtry=c(1:6))
 # nnet.tune.grid <- expand.grid(.size = seq(3, 9, 2),
 #                              .decay = seq(0.25, 1.75, 0.5))
-eggs.adaboost.model <- train(eggs ~ treatment + carriers + oocyst + infection + replicate + date, 
+eggs.adaboost.model <- train(eggs ~ treatment + I(treatment : infection) + carriers + log.oocyst + infection + replicate + gametocyt + date, 
                     data=eggs.train, method='adaboost', trControl = eggs.control, 
                     preProcess = c('center', 'scale'),  
                     # tuneGrid = rf.tune.grid,
                     metric = "Kappa", 
-                    verbose = TRUE)
+                    verbose = FALSE)
 getTrainPerf(eggs.adaboost.model)
 ggplot(eggs.adaboost.model)
 dev.eggs.adaboost.classes <- predict(eggs.adaboost.model, newdata = eggs.dev)
@@ -67,17 +67,21 @@ eggs.control <- trainControl(method="repeatedcv", number=10, repeats=3,
                              classProbs = TRUE)
 gbm.tune.grid <- expand.grid(shrinkage=c(0.1, 0.01, 0.001), n.trees=c(150, 200, 250), 
                              interaction.depth=c(1, 2, 3), n.minobsinnode=c(10))
-eggs.gbm.model <- train(eggs ~ treatment + carriers + oocyst + infection + replicate + date, 
+eggs.gbm.model <- train(eggs ~ treatment + I(treatment : infection) + carriers + oocyst + infection + replicate + gametocyt + date, 
                              data=eggs.train, method='gbm', trControl = eggs.control, 
                              preProcess = c('center', 'scale'),  
                              tuneGrid = gbm.tune.grid,
                              metric = "Kappa", 
-                             verbose = TRUE)
+                             verbose = FALSE)
 getTrainPerf(eggs.gbm.model)
 ggplot(eggs.gbm.model)
+summary(eggs.gbm.model)
 dev.eggs.gbm.classes <- predict(eggs.gbm.model, newdata = eggs.dev)
 confusionMatrix(data=dev.eggs.gbm.classes, eggs.dev$eggs)
 
+# Run test set on gbm model
+test.eggs.gbm.classes <- predict(eggs.gbm.model, newdata = eggs.test)
+confusionMatrix(data=test.eggs.gbm.classes, eggs.test$eggs)
 
 set.seed(seed)
 threshold.control <- trainControl(method="repeatedcv", number=10, repeats=3,
@@ -85,12 +89,12 @@ threshold.control <- trainControl(method="repeatedcv", number=10, repeats=3,
 # eggs.tune.grid <- expand.grid(mtry=c(1:2), threshold=seq(0.01, 0.99, 0.02))
 # nnet.tune.grid <- expand.grid(.size = seq(3, 9, 2),
 #                              .decay = seq(0.25, 1.75, 0.5))
-eggs.model <- train(eggs ~ treatment + carriers + oocyst + infection + replicate + date, 
+eggs.model <- train(eggs ~ treatment + I(treatment : infection) + carriers + log.oocyst + infection + replicate + gametocyt + date, 
                           data=eggs.train, method=thresh_code, trControl = threshold.control, 
                           preProcess = c('center', 'scale'),  
                           # tuneGrid = eggs.tune.grid,
                           metric = "Dist", maximize = FALSE, tuneLength = 20, ntree = 1000,
-                          verbose = TRUE)
+                          verbose = FALSE)
 getTrainPerf(eggs.model)
 ggplot(eggs.model)
 importance(eggs.model$finalModel, type=2)
@@ -109,22 +113,59 @@ ggplot(metrics, aes(x = threshold, y = Data, color = Resampled)) +
 
 # Model everything on oocyst
 set.seed(seed)
-oocyst.control <- trainControl(method="repeatedcv", number=10, repeats=5,
-                               summaryFunction = twoClassSummary, 
-                               classProbs = TRUE)
-# eggs.tune.grid <- expand.grid(mtry=c(1:2), threshold=seq(0.01, 0.99, 0.02))
-# nnet.tune.grid <- expand.grid(.size = seq(3, 9, 2),
-#                              .decay = seq(0.25, 1.75, 0.5))
-oocyst.rf.model <- train(has.oocyst ~ eggs + treatment + carriers + replicate + date, 
+oocyst.control <- trainControl(method="repeatedcv", number=10, repeats=3)
+oocyst.rf.model <- train(oocyst ~ treatment + infection + I(treatment : infection) + carriers + replicate + gametocyt + date, # I(treatment : infection) +
                     data=eggs.train, method='rf', trControl = oocyst.control, 
                     preProcess = c('center', 'scale'),  
                     # tuneGrid = eggs.tune.grid,
-                    metric = 'ROC',
-                    verbose = TRUE)
-
+                    # metric = 'ROC',
+                    verbose = FALSE)
 getTrainPerf(oocyst.rf.model)
 importance(oocyst.rf.model$finalModel, type = 2)
 ggplot(oocyst.rf.model)
-dev.oocyst.rf.classes <- predict(oocyst.rf.model, newdata = eggs.dev)
-confusionMatrix(data=dev.oocyst.rf.classes, eggs.dev$has.oocyst)
+dev.oocyst.rf.pred <- predict(oocyst.rf.model, newdata = eggs.dev)
+dev.oocyst.rf.rmse <-  sqrt(mean((dev.oocyst.rf.pred - eggs.dev$oocyst) ** 2))
+dev.oocyst.rf.rmse
 
+# Oocyst with gbm
+set.seed(seed)
+oocyst.control <- trainControl(method="repeatedcv", number=10, repeats=3)
+gbm.tune.grid <- expand.grid(shrinkage=c(0.1, 0.01, 0.001), n.trees=c(150, 200, 250), 
+                             interaction.depth=c(1, 2, 3), n.minobsinnode=c(10))
+oocyst.gbm.model <- train(oocyst ~ treatment + infection + I(treatment : infection) +  carriers + replicate + gametocyt + date, # I(treatment : infection) +
+                         data=eggs.train, method='gbm', trControl = oocyst.control, 
+                         preProcess = c('center', 'scale'),  
+                         tuneGrid = gbm.tune.grid,
+                         # metric = 'ROC',
+                         verbose = FALSE)
+getTrainPerf(oocyst.gbm.model)
+ggplot(oocyst.gbm.model)
+summary(oocyst.gbm.model)
+dev.oocyst.gbm.pred <- predict(oocyst.gbm.model, newdata = eggs.dev)
+dev.oocyst.gbm.rmse <-  sqrt(mean((dev.oocyst.gbm.pred - eggs.dev$oocyst) ** 2))
+dev.oocyst.gbm.rmse
+
+# Oocyst with glmStepAIC
+set.seed(seed)
+oocyst.control <- trainControl(method="repeatedcv", number=10, repeats=3)
+oocyst.glm.model <- train(oocyst ~ treatment + infection + I(treatment : infection) + carriers + replicate + gametocyt + date,
+                          data=eggs.train, method='glmStepAIC', trControl = oocyst.control, 
+                          preProcess = c('center', 'scale'),  
+                          # metric = 'ROC',
+                          verbose = FALSE)
+
+getTrainPerf(oocyst.glm.model)
+ggplot(oocyst.glm.model)
+summary(oocyst.glm.model)
+dev.oocyst.glm.pred <- predict(oocyst.glm.model, newdata = eggs.dev)
+dev.oocyst.glm.rmse <-  sqrt(mean((dev.oocyst.glm.pred - eggs.dev$oocyst) ** 2))
+dev.oocyst.glm.rmse
+
+# predict test set with both glm and gbm models
+test.oocyst.glm.pred <- predict(oocyst.glm.model, newdata = eggs.test)
+test.oocyst.glm.rmse <-  sqrt(mean((test.oocyst.glm.pred - eggs.test$oocyst) ** 2))
+test.oocyst.glm.rmse
+
+test.oocyst.gbm.pred <- predict(oocyst.gbm.model, newdata = eggs.test)
+test.oocyst.gbm.rmse <-  sqrt(mean((test.oocyst.gbm.pred - eggs.test$oocyst) ** 2))
+test.oocyst.gbm.rmse
