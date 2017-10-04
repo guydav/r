@@ -1,0 +1,5 @@
+ConsequencesSocialIdentity.pdf (application/pdf) 145609 bytes.
+mazedata1.dta (application/x-stata) 65816 bytes.
+PersistentEffects.pdf (application/pdf) 115728 bytes.
+variable_definition Hoff Social.pdf (application/pdf) 112777 bytes.
+mazedata1.tab (text/tab-separated-values) 29993 bytes.
